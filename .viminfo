@@ -11,20 +11,22 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~Msle0~/\<export\>
+~MSle0~/\<export\>
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
-:q
-|2,0,1567699320,,"q"
-:w
-|2,0,1567699315,,"w"
 :wq
-|2,0,1567699076,,"wq"
+|2,0,1567702316,,"wq"
+:q
+|2,0,1567702201,,"q"
+:w
+|2,0,1567702041,,"w"
 :q!
-|2,0,1567697790,,"q!"
+|2,0,1567701985,,"q!"
+:wq!
+|2,0,1567701982,,"wq!"
 :s
 |2,0,1567686597,,"s"
 :W
@@ -32,7 +34,7 @@ $
 
 # Search String History (newest to oldest):
 ? @$
-|2,1,1567697441,,"@$"
+|2,1,1567700951,,"@$"
 ? \<export\>
 |2,1,1567693866,,"\\<export\\>"
 ?/oh-my
@@ -73,279 +75,383 @@ $
 # Debug Line History (newest to oldest):
 
 # Registers:
-"0	CHAR	0
-	#
-|3,0,0,0,1,0,1567697441,"#"
-"1	LINE	0
-	whatever
-|3,0,1,1,1,0,1567698935,"whatever"
+"0	LINE	0
+	echo "Changing the keyboard loayout";
+|3,0,0,1,1,0,1567700953,"echo \"Changing the keyboard loayout\";"
+""1	LINE	0
+	#!/bin/bash
+|3,1,1,1,1,0,1567702314,"#!/bin/bash"
 "2	LINE	0
-	sed
-|3,0,2,1,1,0,1567698935,"sed"
+		dd15iOption "HorizTwoFingerScroll" "on" 
+|3,0,2,1,1,0,1567701979,"	dd15iOption \"HorizTwoFingerScroll\" \"on\" "
 "3	LINE	0
-	line 3
-|3,0,3,1,1,0,1567698934,"line 3"
+		dd15iOption "HorizTwoFingerScroll" "on" 
+|3,0,3,1,1,0,1567701979,"	dd15iOption \"HorizTwoFingerScroll\" \"on\" "
 "4	LINE	0
-	line 2
-|3,0,4,1,1,0,1567698934,"line 2"
+	Option "VertTwoFingerScroll" "on" 
+|3,0,4,1,1,0,1567701975,"Option \"VertTwoFingerScroll\" \"on\" "
 "5	LINE	0
-	line 1
-|3,0,5,1,1,0,1567698934,"line 1"
+	echo "Changing the keyboard loayout";
+|3,0,5,1,1,0,1567700586,"echo \"Changing the keyboard loayout\";"
 "6	LINE	0
-	line 2
-|3,0,6,1,1,0,1567698634,"line 2"
+	echo "Disabling the PC Speaker";
+|3,0,6,1,1,0,1567700585,"echo \"Disabling the PC Speaker\";"
 "7	LINE	0
-	line line 1
-|3,0,7,1,1,0,1567698633,"line line 1"
+	echo "Changing the keyboard loayout";;
+|3,0,7,1,1,0,1567700544,"echo \"Changing the keyboard loayout\";;"
 "8	LINE	0
-	whatever
-|3,0,8,1,1,0,1567698619,"whatever"
+	Option "XkbLayout" "ba"
+|3,0,8,1,1,0,1567699899,"Option \"XkbLayout\" \"ba\""
 "9	LINE	0
-	whatever
-|3,0,9,1,1,0,1567698619,"whatever"
-""-	CHAR	0
-	&
-|3,1,36,0,1,0,1567699070,"&"
+	sed
+|3,0,9,1,1,0,1567698935,"sed"
+"-	CHAR	0
+	i
+|3,0,36,0,1,0,1567701965,"i"
 
 # File marks:
-'0  11  0  ~/.scripts/script.sh
-|4,48,11,0,1567699320,"~/.scripts/script.sh"
-'1  1  11  ~/.scripts/test.sh
-|4,49,1,11,1567699076,"~/.scripts/test.sh"
-'2  1  0  ~/.scripts/test1
-|4,50,1,0,1567699050,"~/.scripts/test1"
-'3  2  16  ~/.scripts/test.sh
-|4,51,2,16,1567699036,"~/.scripts/test.sh"
-'4  2  16  ~/.scripts/test.sh
-|4,52,2,16,1567699036,"~/.scripts/test.sh"
-'5  2  16  ~/.scripts/test
-|4,53,2,16,1567699001,"~/.scripts/test"
-'6  1  0  ~/.scripts/test2
-|4,54,1,0,1567698975,"~/.scripts/test2"
-'7  1  0  ~/.scripts/test1
-|4,55,1,0,1567698972,"~/.scripts/test1"
-'8  1  11  ~/.scripts/test.sh
-|4,56,1,11,1567698946,"~/.scripts/test.sh"
-'9  1  11  ~/.scripts/test.sh
-|4,57,1,11,1567698946,"~/.scripts/test.sh"
+'0  10  7  ~/.scripts/init.sh
+|4,48,10,7,1567702397,"~/.scripts/init.sh"
+'1  74  0  ~/.bin/lock
+|4,49,74,0,1567702395,"~/.bin/lock"
+'2  2  0  ~/test123.sh
+|4,50,2,0,1567702316,"~/test123.sh"
+'3  1  15  ~/test123
+|4,51,1,15,1567702291,"~/test123"
+'4  83  0  ~/.bin/make-screenshot
+|4,52,83,0,1567702201,"~/.bin/make-screenshot"
+'5  16  0  ~/.scripts/init.sh
+|4,53,16,0,1567702047,"~/.scripts/init.sh"
+'6  16  0  ~/.scripts/init.sh
+|4,54,16,0,1567702047,"~/.scripts/init.sh"
+'7  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,55,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+'8  18  1  ~/.scripts/init.sh
+|4,56,18,1,1567701971,"~/.scripts/init.sh"
+'9  17  1  ~/.scripts/init.sh
+|4,57,17,1,1567701971,"~/.scripts/init.sh"
 
 # Jumplist (newest first):
--'  11  0  ~/.scripts/script.sh
-|4,39,11,0,1567699320,"~/.scripts/script.sh"
--'  1  10  ~/.scripts/script.sh
-|4,39,1,10,1567699120,"~/.scripts/script.sh"
--'  1  11  ~/.scripts/test.sh
-|4,39,1,11,1567699076,"~/.scripts/test.sh"
--'  1  11  ~/.scripts/test.sh
-|4,39,1,11,1567699076,"~/.scripts/test.sh"
--'  2  16  ~/.scripts/test.sh
-|4,39,2,16,1567699061,"~/.scripts/test.sh"
--'  2  16  ~/.scripts/test.sh
-|4,39,2,16,1567699061,"~/.scripts/test.sh"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567699050,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567699050,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567699050,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567699050,"~/.scripts/test1"
--'  2  16  ~/.scripts/test.sh
-|4,39,2,16,1567699036,"~/.scripts/test.sh"
--'  2  16  ~/.scripts/test.sh
-|4,39,2,16,1567699036,"~/.scripts/test.sh"
--'  2  16  ~/.scripts/test.sh
-|4,39,2,16,1567699036,"~/.scripts/test.sh"
--'  2  16  ~/.scripts/test.sh
-|4,39,2,16,1567699036,"~/.scripts/test.sh"
--'  1  11  ~/.scripts/test.sh
-|4,39,1,11,1567699014,"~/.scripts/test.sh"
--'  1  11  ~/.scripts/test.sh
-|4,39,1,11,1567699014,"~/.scripts/test.sh"
--'  1  11  ~/.scripts/test.sh
-|4,39,1,11,1567699014,"~/.scripts/test.sh"
--'  1  11  ~/.scripts/test.sh
-|4,39,1,11,1567699014,"~/.scripts/test.sh"
--'  2  16  ~/.scripts/test
-|4,39,2,16,1567699001,"~/.scripts/test"
--'  2  16  ~/.scripts/test
-|4,39,2,16,1567699001,"~/.scripts/test"
--'  2  16  ~/.scripts/test
-|4,39,2,16,1567699001,"~/.scripts/test"
--'  2  16  ~/.scripts/test
-|4,39,2,16,1567699001,"~/.scripts/test"
--'  2  16  ~/.scripts/test
-|4,39,2,16,1567699001,"~/.scripts/test"
--'  2  16  ~/.scripts/test
-|4,39,2,16,1567699001,"~/.scripts/test"
--'  2  16  ~/.scripts/test
-|4,39,2,16,1567699001,"~/.scripts/test"
--'  2  16  ~/.scripts/test
-|4,39,2,16,1567699001,"~/.scripts/test"
--'  2  16  ~/.scripts/test
-|4,39,2,16,1567699001,"~/.scripts/test"
--'  2  16  ~/.scripts/test
-|4,39,2,16,1567699001,"~/.scripts/test"
--'  2  16  ~/.scripts/test
-|4,39,2,16,1567699001,"~/.scripts/test"
--'  2  16  ~/.scripts/test
-|4,39,2,16,1567699001,"~/.scripts/test"
--'  2  16  ~/.scripts/test
-|4,39,2,16,1567699001,"~/.scripts/test"
--'  2  16  ~/.scripts/test
-|4,39,2,16,1567699001,"~/.scripts/test"
--'  2  16  ~/.scripts/test
-|4,39,2,16,1567699001,"~/.scripts/test"
--'  2  16  ~/.scripts/test
-|4,39,2,16,1567699001,"~/.scripts/test"
--'  1  0  ~/.scripts/test
-|4,39,1,0,1567698978,"~/.scripts/test"
--'  1  0  ~/.scripts/test
-|4,39,1,0,1567698978,"~/.scripts/test"
--'  1  0  ~/.scripts/test
-|4,39,1,0,1567698978,"~/.scripts/test"
--'  1  0  ~/.scripts/test
-|4,39,1,0,1567698978,"~/.scripts/test"
--'  1  0  ~/.scripts/test
-|4,39,1,0,1567698978,"~/.scripts/test"
--'  1  0  ~/.scripts/test
-|4,39,1,0,1567698978,"~/.scripts/test"
--'  1  0  ~/.scripts/test
-|4,39,1,0,1567698978,"~/.scripts/test"
--'  1  0  ~/.scripts/test
-|4,39,1,0,1567698978,"~/.scripts/test"
--'  1  0  ~/.scripts/test
-|4,39,1,0,1567698978,"~/.scripts/test"
--'  1  0  ~/.scripts/test
-|4,39,1,0,1567698978,"~/.scripts/test"
--'  1  0  ~/.scripts/test
-|4,39,1,0,1567698978,"~/.scripts/test"
--'  1  0  ~/.scripts/test
-|4,39,1,0,1567698978,"~/.scripts/test"
--'  1  0  ~/.scripts/test
-|4,39,1,0,1567698978,"~/.scripts/test"
--'  1  0  ~/.scripts/test
-|4,39,1,0,1567698978,"~/.scripts/test"
--'  1  0  ~/.scripts/test
-|4,39,1,0,1567698978,"~/.scripts/test"
--'  1  0  ~/.scripts/test
-|4,39,1,0,1567698978,"~/.scripts/test"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test2
-|4,39,1,0,1567698975,"~/.scripts/test2"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
--'  1  0  ~/.scripts/test1
-|4,39,1,0,1567698972,"~/.scripts/test1"
+-'  10  7  ~/.scripts/init.sh
+|4,39,10,7,1567702397,"~/.scripts/init.sh"
+-'  74  0  ~/.bin/lock
+|4,39,74,0,1567702395,"~/.bin/lock"
+-'  2  0  ~/test123.sh
+|4,39,2,0,1567702316,"~/test123.sh"
+-'  1  15  ~/test123
+|4,39,1,15,1567702291,"~/test123"
+-'  1  15  ~/test123
+|4,39,1,15,1567702291,"~/test123"
+-'  1  0  ~/.bin/lock
+|4,39,1,0,1567702210,"~/.bin/lock"
+-'  83  0  ~/.bin/make-screenshot
+|4,39,83,0,1567702201,"~/.bin/make-screenshot"
+-'  83  0  ~/.bin/make-screenshot
+|4,39,83,0,1567702201,"~/.bin/make-screenshot"
+-'  83  0  ~/.bin/make-screenshot
+|4,39,83,0,1567702201,"~/.bin/make-screenshot"
+-'  83  0  ~/.bin/make-screenshot
+|4,39,83,0,1567702201,"~/.bin/make-screenshot"
+-'  83  0  ~/.bin/make-screenshot
+|4,39,83,0,1567702201,"~/.bin/make-screenshot"
+-'  1  0  ~/.bin/make-screenshot
+|4,39,1,0,1567702187,"~/.bin/make-screenshot"
+-'  1  0  ~/.bin/make-screenshot
+|4,39,1,0,1567702187,"~/.bin/make-screenshot"
+-'  1  0  ~/.bin/make-screenshot
+|4,39,1,0,1567702187,"~/.bin/make-screenshot"
+-'  1  0  ~/.bin/make-screenshot
+|4,39,1,0,1567702187,"~/.bin/make-screenshot"
+-'  1  0  ~/.bin/make-screenshot
+|4,39,1,0,1567702187,"~/.bin/make-screenshot"
+-'  16  0  ~/.scripts/init.sh
+|4,39,16,0,1567702059,"~/.scripts/init.sh"
+-'  16  0  ~/.scripts/init.sh
+|4,39,16,0,1567702047,"~/.scripts/init.sh"
+-'  16  0  ~/.scripts/init.sh
+|4,39,16,0,1567702047,"~/.scripts/init.sh"
+-'  16  0  ~/.scripts/init.sh
+|4,39,16,0,1567702047,"~/.scripts/init.sh"
+-'  16  0  ~/.scripts/init.sh
+|4,39,16,0,1567702047,"~/.scripts/init.sh"
+-'  16  0  ~/.scripts/init.sh
+|4,39,16,0,1567702047,"~/.scripts/init.sh"
+-'  16  0  ~/.scripts/init.sh
+|4,39,16,0,1567702047,"~/.scripts/init.sh"
+-'  16  0  ~/.scripts/init.sh
+|4,39,16,0,1567702047,"~/.scripts/init.sh"
+-'  16  0  ~/.scripts/init.sh
+|4,39,16,0,1567702047,"~/.scripts/init.sh"
+-'  16  0  ~/.scripts/init.sh
+|4,39,16,0,1567702047,"~/.scripts/init.sh"
+-'  16  0  ~/.scripts/init.sh
+|4,39,16,0,1567702047,"~/.scripts/init.sh"
+-'  18  1  ~/.scripts/init.sh
+|4,39,18,1,1567702025,"~/.scripts/init.sh"
+-'  18  1  ~/.scripts/init.sh
+|4,39,18,1,1567702025,"~/.scripts/init.sh"
+-'  18  1  ~/.scripts/init.sh
+|4,39,18,1,1567702025,"~/.scripts/init.sh"
+-'  18  1  ~/.scripts/init.sh
+|4,39,18,1,1567702025,"~/.scripts/init.sh"
+-'  18  1  ~/.scripts/init.sh
+|4,39,18,1,1567702025,"~/.scripts/init.sh"
+-'  18  1  ~/.scripts/init.sh
+|4,39,18,1,1567702025,"~/.scripts/init.sh"
+-'  18  1  ~/.scripts/init.sh
+|4,39,18,1,1567702025,"~/.scripts/init.sh"
+-'  18  1  ~/.scripts/init.sh
+|4,39,18,1,1567702025,"~/.scripts/init.sh"
+-'  18  1  ~/.scripts/init.sh
+|4,39,18,1,1567702025,"~/.scripts/init.sh"
+-'  18  1  ~/.scripts/init.sh
+|4,39,18,1,1567702025,"~/.scripts/init.sh"
+-'  18  1  ~/.scripts/init.sh
+|4,39,18,1,1567702025,"~/.scripts/init.sh"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  17  1  ~/.scripts/init.sh
+|4,39,17,1,1567701971,"~/.scripts/init.sh"
+-'  17  1  ~/.scripts/init.sh
+|4,39,17,1,1567701971,"~/.scripts/init.sh"
+-'  17  1  ~/.scripts/init.sh
+|4,39,17,1,1567701971,"~/.scripts/init.sh"
+-'  17  1  ~/.scripts/init.sh
+|4,39,17,1,1567701971,"~/.scripts/init.sh"
+-'  17  1  ~/.scripts/init.sh
+|4,39,17,1,1567701971,"~/.scripts/init.sh"
+-'  17  1  ~/.scripts/init.sh
+|4,39,17,1,1567701971,"~/.scripts/init.sh"
+-'  17  1  ~/.scripts/init.sh
+|4,39,17,1,1567701971,"~/.scripts/init.sh"
+-'  17  1  ~/.scripts/init.sh
+|4,39,17,1,1567701971,"~/.scripts/init.sh"
+-'  17  1  ~/.scripts/init.sh
+|4,39,17,1,1567701971,"~/.scripts/init.sh"
+-'  17  1  ~/.scripts/init.sh
+|4,39,17,1,1567701971,"~/.scripts/init.sh"
+-'  17  1  ~/.scripts/init.sh
+|4,39,17,1,1567701971,"~/.scripts/init.sh"
+-'  19  38  ~/.scripts/init.sh
+|4,39,19,38,1567701956,"~/.scripts/init.sh"
+-'  19  38  ~/.scripts/init.sh
+|4,39,19,38,1567701956,"~/.scripts/init.sh"
+-'  18  38  ~/.scripts/init.sh
+|4,39,18,38,1567701956,"~/.scripts/init.sh"
+-'  19  38  ~/.scripts/init.sh
+|4,39,19,38,1567701956,"~/.scripts/init.sh"
+-'  18  38  ~/.scripts/init.sh
+|4,39,18,38,1567701956,"~/.scripts/init.sh"
+-'  19  38  ~/.scripts/init.sh
+|4,39,19,38,1567701956,"~/.scripts/init.sh"
+-'  18  38  ~/.scripts/init.sh
+|4,39,18,38,1567701956,"~/.scripts/init.sh"
+-'  19  38  ~/.scripts/init.sh
+|4,39,19,38,1567701956,"~/.scripts/init.sh"
+-'  18  38  ~/.scripts/init.sh
+|4,39,18,38,1567701956,"~/.scripts/init.sh"
+-'  19  38  ~/.scripts/init.sh
+|4,39,19,38,1567701956,"~/.scripts/init.sh"
+-'  18  38  ~/.scripts/init.sh
+|4,39,18,38,1567701956,"~/.scripts/init.sh"
+-'  19  38  ~/.scripts/init.sh
+|4,39,19,38,1567701956,"~/.scripts/init.sh"
+-'  18  38  ~/.scripts/init.sh
+|4,39,18,38,1567701956,"~/.scripts/init.sh"
+-'  19  38  ~/.scripts/init.sh
+|4,39,19,38,1567701956,"~/.scripts/init.sh"
+-'  18  38  ~/.scripts/init.sh
+|4,39,18,38,1567701956,"~/.scripts/init.sh"
+-'  19  38  ~/.scripts/init.sh
+|4,39,19,38,1567701956,"~/.scripts/init.sh"
+-'  18  38  ~/.scripts/init.sh
+|4,39,18,38,1567701956,"~/.scripts/init.sh"
+-'  19  38  ~/.scripts/init.sh
+|4,39,19,38,1567701956,"~/.scripts/init.sh"
+-'  18  38  ~/.scripts/init.sh
+|4,39,18,38,1567701956,"~/.scripts/init.sh"
+-'  19  38  ~/.scripts/init.sh
+|4,39,19,38,1567701956,"~/.scripts/init.sh"
+-'  18  38  ~/.scripts/init.sh
+|4,39,18,38,1567701956,"~/.scripts/init.sh"
+-'  14  23  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,23,1567701943,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  23  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,23,1567701943,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  23  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,23,1567701943,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  23  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,23,1567701943,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  23  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,23,1567701943,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  23  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,23,1567701943,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  23  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,23,1567701943,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  14  23  /etc/X11/xorg.conf.d/70-synaptics.conf
+|4,39,14,23,1567701943,"/etc/X11/xorg.conf.d/70-synaptics.conf"
 
 # History of marks within files (newest to oldest):
 
-> ~/.scripts/script.sh
-	*	1567699319	0
-	"	11	0
-	^	2	0
+> ~/test123.sh
+	*	1567702315	0
+	"	2	0
+	^	1	11
 	.	2	0
+	+	2	10
+	+	1	10
+	+	2	0
+
+> ~/test123
+	*	1567702290	0
+	"	1	15
+	^	1	16
+	.	1	16
+	+	4	6
+	+	1	16
+
+> ~/.bin/lock
+	*	1567702214	0
+	"	74	0
+
+> ~/.bin/make-screenshot
+	*	1567702200	0
+	"	83	0
+
+> ~/.scripts/init.sh
+	*	1567702070	0
+	"	10	7
+	^	16	1
+	.	16	0
+	+	2	46
+	+	14	47
+	+	13	21
+	+	14	68
+	+	15	47
+	+	17	42
+	+	19	20
+	+	11	0
+	+	8	0
+	+	5	0
+	+	15	44
+	+	17	1
+	+	18	1
+	+	17	38
+	+	19	38
+	+	17	1
+	+	18	1
+	+	16	0
+
+> /etc/X11/xorg.conf.d/70-synaptics.conf
+	*	1567701984	0
+	"	14	0
+	.	14	0
+	+	14	0
+
+> /usr/share/X11/xorg.conf.d/70-synaptics.conf
+	*	1567700927	0
+	"	1	0
+
+> /etc/modprobe.d/nobeep.conf
+	*	1567700599	0
+	"	1	0
+
+> /etc/X11/xorg.conf.d/00-keyboard.conf
+	*	1567700595	0
+	"	8	0
+
+> ~/.scripts/script.sh
+	*	1567700588	0
+	"	8	0
+	.	9	0
 	+	10	11
 	+	1	10
 	+	5	46
 	+	9	34
 	+	7	53
 	+	5	0
-	+	11	0
+	+	10	0
 	+	2	0
+	+	4	14
+	+	7	54
+	+	10	80
+	+	4	12
+	+	7	53
+	+	10	49
+	+	4	0
+	+	3	31
+	+	9	36
+	+	9	0
+	+	9	36
+	+	3	0
+	+	9	0
+
+> /usr/share/X11/xorg.conf.d/40-libinput.conf
+	*	1567700179	0
+	"	29	8
+	.	28	0
+	+	28	0
+
+> /usr/share/X11/xorg.conf.d/10-quirks.conf
+	*	1567699962	0
+	"	38	0
+
+> ~/test2
+	*	1567699606	0
+	"	1	0
+
+> ~/test1
+	*	1567699602	0
+	"	1	0
+
+> ~/test.sh
+	*	1567699598	0
+	"	3	0
+	^	3	0
+	.	2	17
+	+	2	17
 
 > ~/.scripts/test.sh
 	*	1567699075	0
@@ -387,12 +493,6 @@ $
 	^	1	19
 	.	1	18
 	+	1	18
-
-> /usr/share/X11/xorg.conf.d/40-libinput.conf
-	*	1567697764	0
-	"	28	8
-	.	28	0
-	+	28	0
 
 > ~/test
 	*	1567697463	0
