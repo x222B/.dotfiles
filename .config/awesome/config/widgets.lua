@@ -6,8 +6,8 @@ local config = {}
 
 function config.init(context)
 
-    awful.util.tagcolumns = 9
-    awful.util.tagnames = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
+    awful.util.tagcolumns = 5 
+    awful.util.tagnames = { "1", "2", "3", "4", "5" }
     -- awful.util.tagnames = { "α", "β", "γ", "δ", "ϵ", "λ", "μ", "σ", "ω" }
 
     awful.layout.layouts = {

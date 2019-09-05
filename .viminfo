@@ -18,11 +18,11 @@ $
 
 # Command Line History (newest to oldest):
 :wq
-|2,0,1567702316,,"wq"
+|2,0,1567704234,,"wq"
 :q
-|2,0,1567702201,,"q"
+|2,0,1567704202,,"q"
 :w
-|2,0,1567702041,,"w"
+|2,0,1567702637,,"w"
 :q!
 |2,0,1567701985,,"q!"
 :wq!
@@ -34,7 +34,7 @@ $
 
 # Search String History (newest to oldest):
 ? @$
-|2,1,1567700951,,"@$"
+|2,1,1567704071,,"@$"
 ? \<export\>
 |2,1,1567693866,,"\\<export\\>"
 ?/oh-my
@@ -75,12 +75,12 @@ $
 # Debug Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	echo "Changing the keyboard loayout";
-|3,0,0,1,1,0,1567700953,"echo \"Changing the keyboard loayout\";"
-""1	LINE	0
+"0	CHAR	0
+	"
+|3,0,0,0,1,0,1567704074,"\""
+"1	LINE	0
 	#!/bin/bash
-|3,1,1,1,1,0,1567702314,"#!/bin/bash"
+|3,0,1,1,1,0,1567702314,"#!/bin/bash"
 "2	LINE	0
 		dd15iOption "HorizTwoFingerScroll" "on" 
 |3,0,2,1,1,0,1567701979,"	dd15iOption \"HorizTwoFingerScroll\" \"on\" "
@@ -105,235 +105,293 @@ $
 "9	LINE	0
 	sed
 |3,0,9,1,1,0,1567698935,"sed"
-"-	CHAR	0
-	i
-|3,0,36,0,1,0,1567701965,"i"
+""-	CHAR	0
+	9
+|3,1,36,0,1,0,1567704224,"9"
 
 # File marks:
-'0  10  7  ~/.scripts/init.sh
-|4,48,10,7,1567702397,"~/.scripts/init.sh"
-'1  74  0  ~/.bin/lock
-|4,49,74,0,1567702395,"~/.bin/lock"
-'2  2  0  ~/test123.sh
-|4,50,2,0,1567702316,"~/test123.sh"
-'3  1  15  ~/test123
-|4,51,1,15,1567702291,"~/test123"
-'4  83  0  ~/.bin/make-screenshot
-|4,52,83,0,1567702201,"~/.bin/make-screenshot"
-'5  16  0  ~/.scripts/init.sh
-|4,53,16,0,1567702047,"~/.scripts/init.sh"
-'6  16  0  ~/.scripts/init.sh
-|4,54,16,0,1567702047,"~/.scripts/init.sh"
-'7  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,55,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
-'8  18  1  ~/.scripts/init.sh
-|4,56,18,1,1567701971,"~/.scripts/init.sh"
-'9  17  1  ~/.scripts/init.sh
-|4,57,17,1,1567701971,"~/.scripts/init.sh"
+'0  10  50  ~/.config/awesome/config/widgets.lua
+|4,48,10,50,1567704234,"~/.config/awesome/config/widgets.lua"
+'1  1  0  ~/.config/awesome/widgets/init.lua
+|4,49,1,0,1567704202,"~/.config/awesome/widgets/init.lua"
+'2  1  0  ~/.config/awesome/widgets/pacman.lua
+|4,50,1,0,1567704198,"~/.config/awesome/widgets/pacman.lua"
+'3  75  0  ~/.config/awesome/rc.lua
+|4,51,75,0,1567704186,"~/.config/awesome/rc.lua"
+'4  11  0  ~/.config/kitty/kitty.conf
+|4,52,11,0,1567704110,"~/.config/kitty/kitty.conf"
+'5  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,53,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+'6  75  0  ~/.config/awesome/rc.lua
+|4,54,75,0,1567704082,"~/.config/awesome/rc.lua"
+'7  431  41  ~/.config/zsh/alias.zsh
+|4,55,431,41,1567704066,"~/.config/zsh/alias.zsh"
+'8  431  40  ~/.config/zsh/alias.zsh
+|4,56,431,40,1567703985,"~/.config/zsh/alias.zsh"
+'9  363  0  ~/.config/zsh/alias.zsh
+|4,57,363,0,1567703101,"~/.config/zsh/alias.zsh"
 
 # Jumplist (newest first):
--'  10  7  ~/.scripts/init.sh
-|4,39,10,7,1567702397,"~/.scripts/init.sh"
--'  74  0  ~/.bin/lock
-|4,39,74,0,1567702395,"~/.bin/lock"
--'  2  0  ~/test123.sh
-|4,39,2,0,1567702316,"~/test123.sh"
--'  1  15  ~/test123
-|4,39,1,15,1567702291,"~/test123"
--'  1  15  ~/test123
-|4,39,1,15,1567702291,"~/test123"
--'  1  0  ~/.bin/lock
-|4,39,1,0,1567702210,"~/.bin/lock"
--'  83  0  ~/.bin/make-screenshot
-|4,39,83,0,1567702201,"~/.bin/make-screenshot"
--'  83  0  ~/.bin/make-screenshot
-|4,39,83,0,1567702201,"~/.bin/make-screenshot"
--'  83  0  ~/.bin/make-screenshot
-|4,39,83,0,1567702201,"~/.bin/make-screenshot"
--'  83  0  ~/.bin/make-screenshot
-|4,39,83,0,1567702201,"~/.bin/make-screenshot"
--'  83  0  ~/.bin/make-screenshot
-|4,39,83,0,1567702201,"~/.bin/make-screenshot"
--'  1  0  ~/.bin/make-screenshot
-|4,39,1,0,1567702187,"~/.bin/make-screenshot"
--'  1  0  ~/.bin/make-screenshot
-|4,39,1,0,1567702187,"~/.bin/make-screenshot"
--'  1  0  ~/.bin/make-screenshot
-|4,39,1,0,1567702187,"~/.bin/make-screenshot"
--'  1  0  ~/.bin/make-screenshot
-|4,39,1,0,1567702187,"~/.bin/make-screenshot"
--'  1  0  ~/.bin/make-screenshot
-|4,39,1,0,1567702187,"~/.bin/make-screenshot"
--'  16  0  ~/.scripts/init.sh
-|4,39,16,0,1567702059,"~/.scripts/init.sh"
--'  16  0  ~/.scripts/init.sh
-|4,39,16,0,1567702047,"~/.scripts/init.sh"
--'  16  0  ~/.scripts/init.sh
-|4,39,16,0,1567702047,"~/.scripts/init.sh"
--'  16  0  ~/.scripts/init.sh
-|4,39,16,0,1567702047,"~/.scripts/init.sh"
--'  16  0  ~/.scripts/init.sh
-|4,39,16,0,1567702047,"~/.scripts/init.sh"
--'  16  0  ~/.scripts/init.sh
-|4,39,16,0,1567702047,"~/.scripts/init.sh"
--'  16  0  ~/.scripts/init.sh
-|4,39,16,0,1567702047,"~/.scripts/init.sh"
--'  16  0  ~/.scripts/init.sh
-|4,39,16,0,1567702047,"~/.scripts/init.sh"
--'  16  0  ~/.scripts/init.sh
-|4,39,16,0,1567702047,"~/.scripts/init.sh"
--'  16  0  ~/.scripts/init.sh
-|4,39,16,0,1567702047,"~/.scripts/init.sh"
--'  16  0  ~/.scripts/init.sh
-|4,39,16,0,1567702047,"~/.scripts/init.sh"
--'  18  1  ~/.scripts/init.sh
-|4,39,18,1,1567702025,"~/.scripts/init.sh"
--'  18  1  ~/.scripts/init.sh
-|4,39,18,1,1567702025,"~/.scripts/init.sh"
--'  18  1  ~/.scripts/init.sh
-|4,39,18,1,1567702025,"~/.scripts/init.sh"
--'  18  1  ~/.scripts/init.sh
-|4,39,18,1,1567702025,"~/.scripts/init.sh"
--'  18  1  ~/.scripts/init.sh
-|4,39,18,1,1567702025,"~/.scripts/init.sh"
--'  18  1  ~/.scripts/init.sh
-|4,39,18,1,1567702025,"~/.scripts/init.sh"
--'  18  1  ~/.scripts/init.sh
-|4,39,18,1,1567702025,"~/.scripts/init.sh"
--'  18  1  ~/.scripts/init.sh
-|4,39,18,1,1567702025,"~/.scripts/init.sh"
--'  18  1  ~/.scripts/init.sh
-|4,39,18,1,1567702025,"~/.scripts/init.sh"
--'  18  1  ~/.scripts/init.sh
-|4,39,18,1,1567702025,"~/.scripts/init.sh"
--'  18  1  ~/.scripts/init.sh
-|4,39,18,1,1567702025,"~/.scripts/init.sh"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  0  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,0,1567701985,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  17  1  ~/.scripts/init.sh
-|4,39,17,1,1567701971,"~/.scripts/init.sh"
--'  17  1  ~/.scripts/init.sh
-|4,39,17,1,1567701971,"~/.scripts/init.sh"
--'  17  1  ~/.scripts/init.sh
-|4,39,17,1,1567701971,"~/.scripts/init.sh"
--'  17  1  ~/.scripts/init.sh
-|4,39,17,1,1567701971,"~/.scripts/init.sh"
--'  17  1  ~/.scripts/init.sh
-|4,39,17,1,1567701971,"~/.scripts/init.sh"
--'  17  1  ~/.scripts/init.sh
-|4,39,17,1,1567701971,"~/.scripts/init.sh"
--'  17  1  ~/.scripts/init.sh
-|4,39,17,1,1567701971,"~/.scripts/init.sh"
--'  17  1  ~/.scripts/init.sh
-|4,39,17,1,1567701971,"~/.scripts/init.sh"
--'  17  1  ~/.scripts/init.sh
-|4,39,17,1,1567701971,"~/.scripts/init.sh"
--'  17  1  ~/.scripts/init.sh
-|4,39,17,1,1567701971,"~/.scripts/init.sh"
--'  17  1  ~/.scripts/init.sh
-|4,39,17,1,1567701971,"~/.scripts/init.sh"
--'  19  38  ~/.scripts/init.sh
-|4,39,19,38,1567701956,"~/.scripts/init.sh"
--'  19  38  ~/.scripts/init.sh
-|4,39,19,38,1567701956,"~/.scripts/init.sh"
--'  18  38  ~/.scripts/init.sh
-|4,39,18,38,1567701956,"~/.scripts/init.sh"
--'  19  38  ~/.scripts/init.sh
-|4,39,19,38,1567701956,"~/.scripts/init.sh"
--'  18  38  ~/.scripts/init.sh
-|4,39,18,38,1567701956,"~/.scripts/init.sh"
--'  19  38  ~/.scripts/init.sh
-|4,39,19,38,1567701956,"~/.scripts/init.sh"
--'  18  38  ~/.scripts/init.sh
-|4,39,18,38,1567701956,"~/.scripts/init.sh"
--'  19  38  ~/.scripts/init.sh
-|4,39,19,38,1567701956,"~/.scripts/init.sh"
--'  18  38  ~/.scripts/init.sh
-|4,39,18,38,1567701956,"~/.scripts/init.sh"
--'  19  38  ~/.scripts/init.sh
-|4,39,19,38,1567701956,"~/.scripts/init.sh"
--'  18  38  ~/.scripts/init.sh
-|4,39,18,38,1567701956,"~/.scripts/init.sh"
--'  19  38  ~/.scripts/init.sh
-|4,39,19,38,1567701956,"~/.scripts/init.sh"
--'  18  38  ~/.scripts/init.sh
-|4,39,18,38,1567701956,"~/.scripts/init.sh"
--'  19  38  ~/.scripts/init.sh
-|4,39,19,38,1567701956,"~/.scripts/init.sh"
--'  18  38  ~/.scripts/init.sh
-|4,39,18,38,1567701956,"~/.scripts/init.sh"
--'  19  38  ~/.scripts/init.sh
-|4,39,19,38,1567701956,"~/.scripts/init.sh"
--'  18  38  ~/.scripts/init.sh
-|4,39,18,38,1567701956,"~/.scripts/init.sh"
--'  19  38  ~/.scripts/init.sh
-|4,39,19,38,1567701956,"~/.scripts/init.sh"
--'  18  38  ~/.scripts/init.sh
-|4,39,18,38,1567701956,"~/.scripts/init.sh"
--'  19  38  ~/.scripts/init.sh
-|4,39,19,38,1567701956,"~/.scripts/init.sh"
--'  18  38  ~/.scripts/init.sh
-|4,39,18,38,1567701956,"~/.scripts/init.sh"
--'  14  23  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,23,1567701943,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  23  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,23,1567701943,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  23  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,23,1567701943,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  23  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,23,1567701943,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  23  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,23,1567701943,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  23  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,23,1567701943,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  23  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,23,1567701943,"/etc/X11/xorg.conf.d/70-synaptics.conf"
--'  14  23  /etc/X11/xorg.conf.d/70-synaptics.conf
-|4,39,14,23,1567701943,"/etc/X11/xorg.conf.d/70-synaptics.conf"
+-'  10  50  ~/.config/awesome/config/widgets.lua
+|4,39,10,50,1567704234,"~/.config/awesome/config/widgets.lua"
+-'  35  9  ~/.config/awesome/config/widgets.lua
+|4,39,35,9,1567704216,"~/.config/awesome/config/widgets.lua"
+-'  1  0  ~/.config/awesome/widgets/init.lua
+|4,39,1,0,1567704202,"~/.config/awesome/widgets/init.lua"
+-'  1  0  ~/.config/awesome/widgets/init.lua
+|4,39,1,0,1567704202,"~/.config/awesome/widgets/init.lua"
+-'  1  0  ~/.config/awesome/widgets/pacman.lua
+|4,39,1,0,1567704198,"~/.config/awesome/widgets/pacman.lua"
+-'  1  0  ~/.config/awesome/widgets/pacman.lua
+|4,39,1,0,1567704198,"~/.config/awesome/widgets/pacman.lua"
+-'  1  0  ~/.config/awesome/widgets/pacman.lua
+|4,39,1,0,1567704198,"~/.config/awesome/widgets/pacman.lua"
+-'  1  0  ~/.config/awesome/widgets/pacman.lua
+|4,39,1,0,1567704198,"~/.config/awesome/widgets/pacman.lua"
+-'  75  0  ~/.config/awesome/rc.lua
+|4,39,75,0,1567704186,"~/.config/awesome/rc.lua"
+-'  75  0  ~/.config/awesome/rc.lua
+|4,39,75,0,1567704186,"~/.config/awesome/rc.lua"
+-'  75  0  ~/.config/awesome/rc.lua
+|4,39,75,0,1567704186,"~/.config/awesome/rc.lua"
+-'  75  0  ~/.config/awesome/rc.lua
+|4,39,75,0,1567704186,"~/.config/awesome/rc.lua"
+-'  75  0  ~/.config/awesome/rc.lua
+|4,39,75,0,1567704186,"~/.config/awesome/rc.lua"
+-'  75  0  ~/.config/awesome/rc.lua
+|4,39,75,0,1567704186,"~/.config/awesome/rc.lua"
+-'  75  0  ~/.config/awesome/rc.lua
+|4,39,75,0,1567704186,"~/.config/awesome/rc.lua"
+-'  75  0  ~/.config/awesome/rc.lua
+|4,39,75,0,1567704186,"~/.config/awesome/rc.lua"
+-'  11  0  ~/.config/kitty/kitty.conf
+|4,39,11,0,1567704110,"~/.config/kitty/kitty.conf"
+-'  11  0  ~/.config/kitty/kitty.conf
+|4,39,11,0,1567704110,"~/.config/kitty/kitty.conf"
+-'  11  0  ~/.config/kitty/kitty.conf
+|4,39,11,0,1567704110,"~/.config/kitty/kitty.conf"
+-'  11  0  ~/.config/kitty/kitty.conf
+|4,39,11,0,1567704110,"~/.config/kitty/kitty.conf"
+-'  11  0  ~/.config/kitty/kitty.conf
+|4,39,11,0,1567704110,"~/.config/kitty/kitty.conf"
+-'  11  0  ~/.config/kitty/kitty.conf
+|4,39,11,0,1567704110,"~/.config/kitty/kitty.conf"
+-'  11  0  ~/.config/kitty/kitty.conf
+|4,39,11,0,1567704110,"~/.config/kitty/kitty.conf"
+-'  11  0  ~/.config/kitty/kitty.conf
+|4,39,11,0,1567704110,"~/.config/kitty/kitty.conf"
+-'  11  0  ~/.config/kitty/kitty.conf
+|4,39,11,0,1567704110,"~/.config/kitty/kitty.conf"
+-'  11  0  ~/.config/kitty/kitty.conf
+|4,39,11,0,1567704110,"~/.config/kitty/kitty.conf"
+-'  11  0  ~/.config/kitty/kitty.conf
+|4,39,11,0,1567704110,"~/.config/kitty/kitty.conf"
+-'  11  0  ~/.config/kitty/kitty.conf
+|4,39,11,0,1567704110,"~/.config/kitty/kitty.conf"
+-'  11  0  ~/.config/kitty/kitty.conf
+|4,39,11,0,1567704110,"~/.config/kitty/kitty.conf"
+-'  11  0  ~/.config/kitty/kitty.conf
+|4,39,11,0,1567704110,"~/.config/kitty/kitty.conf"
+-'  11  0  ~/.config/kitty/kitty.conf
+|4,39,11,0,1567704110,"~/.config/kitty/kitty.conf"
+-'  11  0  ~/.config/kitty/kitty.conf
+|4,39,11,0,1567704110,"~/.config/kitty/kitty.conf"
+-'  1  0  ~/.config/kitty/kitty.conf
+|4,39,1,0,1567704105,"~/.config/kitty/kitty.conf"
+-'  1  0  ~/.config/kitty/kitty.conf
+|4,39,1,0,1567704105,"~/.config/kitty/kitty.conf"
+-'  1  0  ~/.config/kitty/kitty.conf
+|4,39,1,0,1567704105,"~/.config/kitty/kitty.conf"
+-'  1  0  ~/.config/kitty/kitty.conf
+|4,39,1,0,1567704105,"~/.config/kitty/kitty.conf"
+-'  1  0  ~/.config/kitty/kitty.conf
+|4,39,1,0,1567704105,"~/.config/kitty/kitty.conf"
+-'  1  0  ~/.config/kitty/kitty.conf
+|4,39,1,0,1567704105,"~/.config/kitty/kitty.conf"
+-'  1  0  ~/.config/kitty/kitty.conf
+|4,39,1,0,1567704105,"~/.config/kitty/kitty.conf"
+-'  1  0  ~/.config/kitty/kitty.conf
+|4,39,1,0,1567704105,"~/.config/kitty/kitty.conf"
+-'  1  0  ~/.config/kitty/kitty.conf
+|4,39,1,0,1567704105,"~/.config/kitty/kitty.conf"
+-'  1  0  ~/.config/kitty/kitty.conf
+|4,39,1,0,1567704105,"~/.config/kitty/kitty.conf"
+-'  1  0  ~/.config/kitty/kitty.conf
+|4,39,1,0,1567704105,"~/.config/kitty/kitty.conf"
+-'  1  0  ~/.config/kitty/kitty.conf
+|4,39,1,0,1567704105,"~/.config/kitty/kitty.conf"
+-'  1  0  ~/.config/kitty/kitty.conf
+|4,39,1,0,1567704105,"~/.config/kitty/kitty.conf"
+-'  1  0  ~/.config/kitty/kitty.conf
+|4,39,1,0,1567704105,"~/.config/kitty/kitty.conf"
+-'  1  0  ~/.config/kitty/kitty.conf
+|4,39,1,0,1567704105,"~/.config/kitty/kitty.conf"
+-'  1  0  ~/.config/kitty/kitty.conf
+|4,39,1,0,1567704105,"~/.config/kitty/kitty.conf"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  116  0  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,116,0,1567704101,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
+-'  66  29  ~/.config/awesome/themes/blackout/theme.lua
+|4,39,66,29,1567704089,"~/.config/awesome/themes/blackout/theme.lua"
 
 # History of marks within files (newest to oldest):
+
+> ~/.config/awesome/config/widgets.lua
+	*	1567704233	0
+	"	10	50
+	^	10	51
+	.	10	51
+	+	10	51
+	+	15	8
+	+	33	9
+	+	9	28
+	+	14	21
+	+	4	0
+	+	14	0
+	+	15	9
+	+	24	7
+	+	20	9
+	+	30	9
+	+	35	9
+	+	9	28
+	+	10	51
+
+> ~/.config/awesome/widgets/init.lua
+	*	1567704201	0
+	"	1	0
+
+> ~/.config/awesome/widgets/pacman.lua
+	*	1567704197	0
+	"	1	0
+
+> ~/.config/awesome/rc.lua
+	*	1567704185	0
+	"	75	0
+	^	57	37
+	.	57	36
+	+	57	36
+
+> /usr/share/vim/vim81/doc/help.txt
+	*	1567704182	0
+	"	1	0
+
+> ~/.config/kitty/kitty.conf
+	*	1567704109	0
+	"	11	0
+
+> ~/.config/awesome/themes/blackout/theme.lua
+	*	1567704101	0
+	"	116	0
+	^	79	66
+	.	79	65
+	+	79	65
+
+> ~/.config/zsh/alias.zsh
+	*	1567704023	0
+	"	431	41
+	^	431	41
+	.	431	40
+	+	50	21
+	+	431	40
 
 > ~/test123.sh
 	*	1567702315	0
@@ -601,13 +659,6 @@ $
 	+	52	13
 	+	53	0
 
-> ~/.config/awesome/rc.lua
-	*	1567685399	0
-	"	22	0
-	^	57	37
-	.	57	36
-	+	57	36
-
 > ~/.config/awesome/config/keys.lua
 	*	1567594666	0
 	"	112	50
@@ -649,34 +700,9 @@ $
 	+	24	40
 	+	37	39
 
-> ~/.config/awesome/config/widgets.lua
-	*	1567589331	0
-	"	35	9
-	^	35	10
-	.	35	9
-	+	10	51
-	+	15	8
-	+	33	9
-	+	9	28
-	+	14	21
-	+	4	0
-	+	14	0
-	+	15	9
-	+	24	7
-	+	20	9
-	+	30	9
-	+	35	9
-
 > /usr/share/awesome/lib/awful/widget/layoutbox.lua
 	*	1567588396	0
 	"	30	4
-
-> ~/.config/awesome/themes/blackout/theme.lua
-	*	1567587549	0
-	"	67	87
-	^	79	66
-	.	79	65
-	+	79	65
 
 > ~/.config/awesome/config/screen.lua
 	*	1567587070	0

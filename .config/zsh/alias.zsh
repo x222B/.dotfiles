@@ -426,3 +426,6 @@ ranger-cd-widget() {
 }
 zle     -N     ranger-cd-widget
 bindkey '\e^o' ranger-cd-widget
+
+
+alias torrent="transmission-daemon; tremc"
