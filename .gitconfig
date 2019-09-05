@@ -1,0 +1,75 @@
+[user]
+	name = Dino Tahto
+	email = DinoTahto418@gmail.com
+
+[core]
+	editor = vim
+	whitespace = fix,trailing-space,cr-at-eol
+	hooksPath = ~/.config/git/hooks
+	excludesfile = ~/.ignore
+	commitGraph = true
+
+[credential]
+	helper = cache
+
+[color]
+	advice = true
+	branch = true
+	diff = true
+	grep = true
+	interactive = true
+	pager = true
+	push = true
+	showBranch = true
+	status = true
+	transport = true
+	ui = true
+
+[color "diff"]
+	context = 15
+	meta = 4 bold reverse
+	frag = 3 bold reverse
+	commit = 3 bold
+	old = 9
+	new = 10
+	oldMoved = 8
+	newMoved = 14
+	oldMovedAlternative = 8
+	newMovedAlternative = 14
+	whitespace = 1 reverse
+
+[color "diff-highlight"]
+	oldHighlight = reverse
+	oldReset = noreverse
+
+[color "decorate"]
+	branch = 2 bold
+	remoteBranch = 1 bold
+	tag = 3 bold
+	stash = 5 bold
+	HEAD = 6 bold
+
+[color "interactive"]
+	prompt = 4 bold
+	header = 15 bold
+	help = 15
+	error = 1
+
+[color "push"]
+	error = 1 bold
+
+[color "transport"]
+	rejected = 1 bold
+
+[color "status"]
+	header = 15 bold
+	added = 14 bold
+	changed = 11 bold
+	untracked = 9 bold
+	branch = 15 bold
+	nobranch = 9 bold reverse
+	localBranch = 2 bold
+	remoteBranch = 1 bold
+	unmerged = 1 bold reverse
+
+
