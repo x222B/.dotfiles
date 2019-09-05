@@ -85,7 +85,7 @@ _zsh_autosuggest_modify() {
 
 	# Get a new suggestion if the buffer is not empty after modification
 	if (( $#BUFFER > 0 )); then
-		if [[ -z "$ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE" ]] || (( $#BUFFER <= $ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE )); then
+		if (( ! ${+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE} )) || (( $#BUFFER <= $ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE )); then
 			_zsh_autosuggest_fetch
 		fi
 	fi
@@ -136,11 +136,7 @@ _zsh_autosuggest_accept() {
 		unset POSTDISPLAY
 
 		# Move the cursor to the end of the buffer
-		if [[ "$KEYMAP" = "vicmd" ]]; then
-			CURSOR=$(($#BUFFER - 1))
-		else
-			CURSOR=$#BUFFER
-		fi
+		CURSOR=${#BUFFER}
 	fi
 
 	_zsh_autosuggest_invoke_original_widget $@

@@ -69,6 +69,7 @@ _zsh_autosuggest_bind_widgets() {
 	ignore_widgets=(
 		.\*
 		_\*
+		zle-\*
 		autosuggest-\*
 		$ZSH_AUTOSUGGEST_ORIGINAL_WIDGET_PREFIX\*
 		$ZSH_AUTOSUGGEST_IGNORE_WIDGETS

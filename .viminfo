@@ -11,26 +11,32 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/max
+~Msle0~/\<export\>
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
-:wq
-|2,0,1567692465,,"wq"
 :q
-|2,0,1567691633,,"q"
+|2,0,1567694193,,"q"
+:w
+|2,0,1567694141,,"w"
+:wq
+|2,0,1567693069,,"wq"
 :q!
 |2,0,1567689322,,"q!"
 :s
 |2,0,1567686597,,"s"
-:w
-|2,0,1567685473,,"w"
 :W
 |2,0,1567583404,,"W"
 
 # Search String History (newest to oldest):
+? \<export\>
+|2,1,1567693866,,"\\<export\\>"
+?/oh-my
+|2,1,1567693741,47,"oh-my"
+?/plugins
+|2,1,1567693198,47,"plugins"
 ?/launcher
 |2,1,1567594355,47,"launcher"
 ?/prompt
@@ -67,265 +73,297 @@ $
 # Debug Line History (newest to oldest):
 
 # Registers:
-"0	CHAR	0
-	z
-|3,0,0,0,1,0,1567589214,"z"
-""1	LINE	0
-	[submodule ".config/awesome/freedesktop"]
-|3,1,1,1,1,0,1567692464,"[submodule \".config/awesome/freedesktop\"]"
+"0	LINE	0
+	export ZSH="$HOME/.oh-my-zsh"
+|3,0,0,1,1,0,1567693859,"export ZSH=\"$HOME/.oh-my-zsh\""
+"1	LINE	0
+	
+|3,0,1,1,1,0,1567693870,""
 "2	LINE	0
-		path = .config/awesome/freedesktop
-|3,0,2,1,1,0,1567692464,"	path = .config/awesome/freedesktop"
+	export ZSH="$HOME/.oh-my-zsh"
+|3,0,2,1,1,0,1567693865,"export ZSH=\"$HOME/.oh-my-zsh\""
 "3	LINE	0
-		url = https://github.com/lcpz/awesome-freedesktop.git
-|3,0,3,1,1,0,1567692464,"	url = https://github.com/lcpz/awesome-freedesktop.git"
+	
+|3,0,3,1,1,0,1567693846,""
 "4	LINE	0
-		url = https://github.com/lcpz/awesome-freedesktop.git
-|3,0,4,1,1,0,1567688864,"	url = https://github.com/lcpz/awesome-freedesktop.git"
+	[submodule ".config/awesome/freedesktop"]
+|3,0,4,1,1,0,1567692464,"[submodule \".config/awesome/freedesktop\"]"
 "5	LINE	0
 		path = .config/awesome/freedesktop
-|3,0,5,1,1,0,1567688863,"	path = .config/awesome/freedesktop"
+|3,0,5,1,1,0,1567692464,"	path = .config/awesome/freedesktop"
 "6	LINE	0
-	[submodule ".config/awesome/freedesktop"]
-|3,0,6,1,1,0,1567688863,"[submodule \".config/awesome/freedesktop\"]"
+		url = https://github.com/lcpz/awesome-freedesktop.git
+|3,0,6,1,1,0,1567692464,"	url = https://github.com/lcpz/awesome-freedesktop.git"
 "7	LINE	0
-		path = .config/awesome/freedesktop
-|3,0,7,1,1,0,1567688677,"	path = .config/awesome/freedesktop"
+		url = https://github.com/lcpz/awesome-freedesktop.git
+|3,0,7,1,1,0,1567688864,"	url = https://github.com/lcpz/awesome-freedesktop.git"
 "8	LINE	0
 		path = .config/awesome/freedesktop
-|3,0,8,1,1,0,1567688653,"	path = .config/awesome/freedesktop"
+|3,0,8,1,1,0,1567688863,"	path = .config/awesome/freedesktop"
 "9	LINE	0
-		url = https://github.com/lcpz/awesome-freedesktop.git
-|3,0,9,1,1,0,1567688069,"	url = https://github.com/lcpz/awesome-freedesktop.git"
-"-	CHAR	0
-	R
-|3,0,36,0,1,0,1567686596,"R"
+	[submodule ".config/awesome/freedesktop"]
+|3,0,9,1,1,0,1567688863,"[submodule \".config/awesome/freedesktop\"]"
+""-	CHAR	0
+	#
+|3,1,36,0,1,0,1567694140,"#"
 
 # File marks:
-'0  3  1  ~/.gitmodules
-|4,48,3,1,1567692465,"~/.gitmodules"
-'1  4  53  ~/.gitmodules
-|4,49,4,53,1567692423,"~/.gitmodules"
-'2  6  53  ~/.gitmodules
-|4,50,6,53,1567692423,"~/.gitmodules"
-'3  3  0  ~/.gitmodules
-|4,51,3,0,1567692373,"~/.gitmodules"
-'4  3  0  ~/.gitmodules
-|4,52,3,0,1567692373,"~/.gitmodules"
-'5  3  0  ~/.gitmodules
-|4,53,3,0,1567692373,"~/.gitmodules"
-'6  3  0  ~/.gitmodules
-|4,54,3,0,1567692365,"~/.gitmodules"
-'7  3  0  ~/.gitmodules
-|4,55,3,0,1567692365,"~/.gitmodules"
-'8  3  0  ~/.gitmodules
-|4,56,3,0,1567692365,"~/.gitmodules"
-'9  3  0  ~/.gitmodules
-|4,57,3,0,1567692365,"~/.gitmodules"
+'0  99  0  ~/.zshrc
+|4,48,99,0,1567694193,"~/.zshrc"
+'1  17  28  ~/.zshrc
+|4,49,17,28,1567693754,"~/.zshrc"
+'2  76  8  ~/.zshrc
+|4,50,76,8,1567693709,"~/.zshrc"
+'3  75  8  ~/.zshrc
+|4,51,75,8,1567693709,"~/.zshrc"
+'4  27  0  ~/.oh-my-zsh/oh-my-zsh.sh
+|4,52,27,0,1567693638,"~/.oh-my-zsh/oh-my-zsh.sh"
+'5  26  0  ~/.zshrc
+|4,53,26,0,1567693069,"~/.zshrc"
+'6  26  0  ~/.zshrc
+|4,54,26,0,1567693069,"~/.zshrc"
+'7  25  0  ~/.zshrc
+|4,55,25,0,1567693069,"~/.zshrc"
+'8  25  0  ~/.zshrc
+|4,56,25,0,1567693069,"~/.zshrc"
+'9  25  0  ~/.zshrc
+|4,57,25,0,1567693069,"~/.zshrc"
 
 # Jumplist (newest first):
+-'  99  0  ~/.zshrc
+|4,39,99,0,1567694193,"~/.zshrc"
+-'  18  0  ~/.zshrc
+|4,39,18,0,1567693866,"~/.zshrc"
+-'  17  28  ~/.zshrc
+|4,39,17,28,1567693754,"~/.zshrc"
+-'  69  36  ~/.zshrc
+|4,39,69,36,1567693743,"~/.zshrc"
+-'  68  38  ~/.zshrc
+|4,39,68,38,1567693742,"~/.zshrc"
+-'  67  68  ~/.zshrc
+|4,39,67,68,1567693742,"~/.zshrc"
+-'  33  54  ~/.zshrc
+|4,39,33,54,1567693741,"~/.zshrc"
+-'  28  8  ~/.zshrc
+|4,39,28,8,1567693741,"~/.zshrc"
+-'  76  8  ~/.zshrc
+|4,39,76,8,1567693712,"~/.zshrc"
+-'  75  8  ~/.zshrc
+|4,39,75,8,1567693709,"~/.zshrc"
+-'  27  0  ~/.oh-my-zsh/oh-my-zsh.sh
+|4,39,27,0,1567693638,"~/.oh-my-zsh/oh-my-zsh.sh"
+-'  27  0  ~/.oh-my-zsh/oh-my-zsh.sh
+|4,39,27,0,1567693638,"~/.oh-my-zsh/oh-my-zsh.sh"
+-'  1  0  ~/.oh-my-zsh/oh-my-zsh.sh
+|4,39,1,0,1567693584,"~/.oh-my-zsh/oh-my-zsh.sh"
+-'  1  0  ~/.oh-my-zsh/oh-my-zsh.sh
+|4,39,1,0,1567693584,"~/.oh-my-zsh/oh-my-zsh.sh"
+-'  25  0  ~/.zshrc
+|4,39,25,0,1567693346,"~/.zshrc"
+-'  91  22  ~/.zshrc
+|4,39,91,22,1567693218,"~/.zshrc"
+-'  90  22  ~/.zshrc
+|4,39,90,22,1567693218,"~/.zshrc"
+-'  89  9  ~/.zshrc
+|4,39,89,9,1567693216,"~/.zshrc"
+-'  88  9  ~/.zshrc
+|4,39,88,9,1567693216,"~/.zshrc"
+-'  87  24  ~/.zshrc
+|4,39,87,24,1567693212,"~/.zshrc"
+-'  86  24  ~/.zshrc
+|4,39,86,24,1567693212,"~/.zshrc"
+-'  86  24  ~/.zshrc
+|4,39,86,24,1567693207,"~/.zshrc"
+-'  85  24  ~/.zshrc
+|4,39,85,24,1567693207,"~/.zshrc"
+-'  81  2  ~/.zshrc
+|4,39,81,2,1567693206,"~/.zshrc"
+-'  80  11  ~/.zshrc
+|4,39,80,11,1567693206,"~/.zshrc"
+-'  80  2  ~/.zshrc
+|4,39,80,2,1567693206,"~/.zshrc"
+-'  79  11  ~/.zshrc
+|4,39,79,11,1567693206,"~/.zshrc"
+-'  72  0  ~/.zshrc
+|4,39,72,0,1567693205,"~/.zshrc"
+-'  71  26  ~/.zshrc
+|4,39,71,26,1567693205,"~/.zshrc"
+-'  71  0  ~/.zshrc
+|4,39,71,0,1567693205,"~/.zshrc"
+-'  70  26  ~/.zshrc
+|4,39,70,26,1567693205,"~/.zshrc"
+-'  70  18  ~/.zshrc
+|4,39,70,18,1567693204,"~/.zshrc"
+-'  69  18  ~/.zshrc
+|4,39,69,18,1567693204,"~/.zshrc"
+-'  68  53  ~/.zshrc
+|4,39,68,53,1567693204,"~/.zshrc"
+-'  67  48  ~/.zshrc
+|4,39,67,48,1567693203,"~/.zshrc"
+-'  66  78  ~/.zshrc
+|4,39,66,78,1567693200,"~/.zshrc"
+-'  146  0  ~/.zshrc
+|4,39,146,0,1567693198,"~/.zshrc"
+-'  145  0  ~/.zshrc
+|4,39,145,0,1567693198,"~/.zshrc"
+-'  147  1  ~/.zshrc
+|4,39,147,1,1567693195,"~/.zshrc"
+-'  146  1  ~/.zshrc
+|4,39,146,1,1567693195,"~/.zshrc"
+-'  148  0  ~/.zshrc
+|4,39,148,0,1567693194,"~/.zshrc"
+-'  147  0  ~/.zshrc
+|4,39,147,0,1567693194,"~/.zshrc"
+-'  26  0  ~/.zshrc
+|4,39,26,0,1567693072,"~/.zshrc"
+-'  25  0  ~/.zshrc
+|4,39,25,0,1567693072,"~/.zshrc"
+-'  25  0  ~/.zshrc
+|4,39,25,0,1567693069,"~/.zshrc"
+-'  25  0  ~/.zshrc
+|4,39,25,0,1567693069,"~/.zshrc"
+-'  66  0  ~/.zshrc
+|4,39,66,0,1567692980,"~/.zshrc"
+-'  65  0  ~/.zshrc
+|4,39,65,0,1567692980,"~/.zshrc"
+-'  65  0  ~/.zshrc
+|4,39,65,0,1567692980,"~/.zshrc"
+-'  65  0  ~/.zshrc
+|4,39,65,0,1567692980,"~/.zshrc"
+-'  65  0  ~/.zshrc
+|4,39,65,0,1567692980,"~/.zshrc"
+-'  1  0  ~/.zsh
+|4,39,1,0,1567692978,"~/.zsh"
+-'  1  0  ~/.zsh
+|4,39,1,0,1567692978,"~/.zsh"
+-'  1  0  ~/.zsh
+|4,39,1,0,1567692978,"~/.zsh"
+-'  1  0  ~/.zsh
+|4,39,1,0,1567692978,"~/.zsh"
+-'  1  0  ~/.zsh
+|4,39,1,0,1567692978,"~/.zsh"
+-'  1  0  ~/.zsh
+|4,39,1,0,1567692978,"~/.zsh"
+-'  1  0  ~/.zsh
+|4,39,1,0,1567692978,"~/.zsh"
+-'  1  0  ~/.zsh
+|4,39,1,0,1567692978,"~/.zsh"
+-'  1  0  ~/.zsh
+|4,39,1,0,1567692978,"~/.zsh"
+-'  1  0  ~/.zsh
+|4,39,1,0,1567692978,"~/.zsh"
+-'  1  0  ~/.zsh
+|4,39,1,0,1567692978,"~/.zsh"
+-'  1  0  ~/.zsh
+|4,39,1,0,1567692978,"~/.zsh"
+-'  1  0  ~/.zsh
+|4,39,1,0,1567692978,"~/.zsh"
+-'  1  0  ~/.zsh
+|4,39,1,0,1567692978,"~/.zsh"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
+-'  3  1  ~/.gitmodules
+|4,39,3,1,1567692465,"~/.gitmodules"
 -'  3  1  ~/.gitmodules
 |4,39,3,1,1567692465,"~/.gitmodules"
 -'  4  53  ~/.gitmodules
 |4,39,4,53,1567692463,"~/.gitmodules"
--'  6  53  ~/.gitmodules
-|4,39,6,53,1567692423,"~/.gitmodules"
--'  3  0  ~/.gitmodules
-|4,39,3,0,1567692381,"~/.gitmodules"
--'  3  0  ~/.gitmodules
-|4,39,3,0,1567692373,"~/.gitmodules"
--'  3  0  ~/.gitmodules
-|4,39,3,0,1567692365,"~/.gitmodules"
--'  3  0  ~/.gitmodules
-|4,39,3,0,1567692347,"~/.gitmodules"
--'  1  0  ~/.gitmodules
-|4,39,1,0,1567692338,"~/.gitmodules"
--'  1  0  ~/.gitmodules
-|4,39,1,0,1567692338,"~/.gitmodules"
--'  1  0  ~/.gitmodules
-|4,39,1,0,1567692338,"~/.gitmodules"
--'  1  0  ~/.gitmodules
-|4,39,1,0,1567692338,"~/.gitmodules"
--'  1  0  ~/.gitmodules
-|4,39,1,0,1567692338,"~/.gitmodules"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  62  0  ~/.zshrc
-|4,39,62,0,1567691733,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zshrc
-|4,39,1,0,1567691638,"~/.zshrc"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
--'  1  0  ~/.zsh
-|4,39,1,0,1567691633,"~/.zsh"
+-'  4  53  ~/.gitmodules
+|4,39,4,53,1567692463,"~/.gitmodules"
+-'  4  53  ~/.gitmodules
+|4,39,4,53,1567692463,"~/.gitmodules"
+-'  4  53  ~/.gitmodules
+|4,39,4,53,1567692463,"~/.gitmodules"
+-'  4  53  ~/.gitmodules
+|4,39,4,53,1567692463,"~/.gitmodules"
+-'  4  53  ~/.gitmodules
+|4,39,4,53,1567692463,"~/.gitmodules"
+-'  4  53  ~/.gitmodules
+|4,39,4,53,1567692463,"~/.gitmodules"
 
 # History of marks within files (newest to oldest):
+
+> ~/.zshrc
+	*	1567694193	0
+	"	99	0
+	^	99	1
+	.	99	0
+	+	29	1
+	+	28	18
+	+	26	0
+	+	147	0
+	+	98	0
+	+	99	0
+	+	98	0
+	+	99	0
+	+	17	0
+	+	17	10
+	+	18	10
+	+	19	0
+	+	18	0
+	+	19	0
+	+	98	0
+	+	99	0
+	+	98	0
+	+	99	0
+
+> ~/.oh-my-zsh/oh-my-zsh.sh
+	*	1567693637	0
+	"	27	0
+
+> ~/.zsh
+	*	1567692978	0
+	"	1	0
 
 > ~/.gitmodules
 	*	1567692465	0
@@ -336,14 +374,6 @@ $
 	+	9	0
 	+	8	0
 	+	4	0
-
-> ~/.zshrc
-	*	1567691733	0
-	"	62	0
-
-> ~/.zsh
-	*	1567691633	0
-	"	1	0
 
 > ~/.git/index
 	*	1567688966	0

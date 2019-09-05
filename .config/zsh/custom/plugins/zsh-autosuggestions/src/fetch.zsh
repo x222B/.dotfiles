@@ -18,10 +18,7 @@ _zsh_autosuggest_fetch_suggestion() {
 		# Try to get a suggestion from this strategy
 		_zsh_autosuggest_strategy_$strategy "$1"
 
-		# Ensure the suggestion matches the prefix
-		[[ "$suggestion" != "$1"* ]] && unset suggestion
-
-		# Break once we've found a valid suggestion
+		# Break once we've found a suggestion
 		[[ -n "$suggestion" ]] && break
 	done
 }

@@ -35,7 +35,6 @@ typeset -g ZSH_AUTOSUGGEST_ORIGINAL_WIDGET_PREFIX=autosuggest-orig-
 		up-line-or-history
 		down-line-or-history
 		accept-line
-		copy-earlier-word
 	)
 }
 
@@ -84,10 +83,5 @@ typeset -g ZSH_AUTOSUGGEST_ORIGINAL_WIDGET_PREFIX=autosuggest-orig-
 		which-command
 		yank
 		yank-pop
-		zle-\*
 	)
 }
-
-# Pty name for capturing completions for completion suggestion strategy
-(( ! ${+ZSH_AUTOSUGGEST_COMPLETIONS_PTY_NAME} )) &&
-typeset -g ZSH_AUTOSUGGEST_COMPLETIONS_PTY_NAME=zsh_autosuggest_completion_pty

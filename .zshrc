@@ -14,7 +14,8 @@
 # Path to your oh-my-zsh installation
 
 export ZSH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+#export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$ZSH_CONFIG/custom"
 
 
@@ -22,7 +23,10 @@ export ZSH_CUSTOM="$ZSH_CONFIG/custom"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="norm"
+
+if [[ "$TERM" != 'linux' ]]; then
+    ZSH_THEME='norm'
+fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
