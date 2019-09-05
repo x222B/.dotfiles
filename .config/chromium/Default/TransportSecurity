@@ -242,14 +242,14 @@
    "bVzOnu6xyelN8iVLDSbFjyZVgXrXDyLSokjnq2hdUFs=": {
       "expect_ct": {
          "expect_ct_enforce": false,
-         "expect_ct_expiry": 1570287452.364383,
-         "expect_ct_observed": 1567695452.364383,
+         "expect_ct_expiry": 1570287711.496823,
+         "expect_ct_observed": 1567695711.496823,
          "expect_ct_report_uri": "https://api.github.com/_private/browser/errors"
       },
-      "expiry": 1599231452.364368,
+      "expiry": 1599231711.496798,
       "mode": "force-https",
       "sts_include_subdomains": true,
-      "sts_observed": 1567695452.364372
+      "sts_observed": 1567695711.496806
    },
    "cS2OuniSJowLJI9rmYXCexUl2sFL0RZkXbxFS6G/sPg=": {
       "expiry": 1583244264.918987,
