@@ -28,7 +28,7 @@ function running() {
 }
 
 function action() {
-    echo -e "\n$COL_YELLOW$1...$COL_RESET"
+    echo -en "$COL_YELLOW$1...$COL_RESET"
 }
 
 function warn() {

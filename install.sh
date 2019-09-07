@@ -57,23 +57,46 @@ fi
 #PACKAGE INSTALL#
 #################
 
-#Installs packages found in .pkglist
-green "Installing packages"
-
-#Installs packages from official repositories
-action "Installing all the packages specified in .pkglist/pacman"
-pacman -Syy $(cat .pkglist/pacman)
-
-#Installs yay
-action "Installing yay"
-curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz
-tar xfz yay.tar.gz
-cd yay
-makepkg -si
-
-#Installs packages from Arch User respositorArch User respository
-action "Installing all the packages specified in .pkglist/aur"
-yay -S $(.pkglist/aur)
+read -r -p "Do you want to install packages from .pkglist/pacman? [y/N]" response
+if [[$response =~ (y|yes|Y) ]]; then
+	read -r -p "Do you want to edit the package list? (Installs all packages by default) [y/N]" response
+	if [[$response =~ (y|yes|Y) ]]; then
+		nano ./.pkglist/pacman
+	fi
+	action "Installing packages from .pkglist/pacman"
+	while IFS= read -r line
+	do
+		echo -n "Installing $line"
+		yes | pacman -S $line >/dev/null 2>&1
+		ok
+	done < ".pkglist/pacman"
+fi
+	
+read -r -p "Do you want to install packages from .pkglist/aur? (Requires yay) [y/N]" response
+if [[ $response =~ (y|yes|Y) ]]; then
+	action "Resolving dependencies"
+	if (pacman -Q go >/dev/null) ; then pacman -S --noconfirm go fi
+	if (pacman -Q git >/dev/null) ; then pacman -S --noconfirm git fi
+	
+	action "Installing yay"
+	curl -O -s https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz
+	tar xfz yay.tar.gz
+	pushd yay >/dev/null 2>&1
+	makepkg -si
+	popd >/dev/null 2>&1
+	rm -rf yay*	
+	ok
+	read -r -p "Do you want to edit the package list? (Installs all the packages by default) [y/N]" response
+	if  [[ $response =~ (y|yes|Y) ]]; then
+		nano .pkglist/aur
+	fi
+	while IFS= read -r line
+	do
+		echo -n "Installing $line"
+		yes | yay -S $line >/dev/null 2>&1
+		ok
+	done < ".pkglist/aur"
+fi
 
 #############
 #MISC CONFIG#
