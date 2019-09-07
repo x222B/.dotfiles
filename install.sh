@@ -5,6 +5,7 @@
 #Include colorized echos#
 #########################
 source .lib/echos.sh
+
 ###################################
 #/etc/hosts -- spyware/ad blocking#
 ###################################
