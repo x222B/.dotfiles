@@ -1,9 +1,7 @@
 #!/bin/bash
 #This scripts configures dotfiles, installs packages and and configures additional system settings
 
-#########################
-#Include colorized echos#
-#########################
+#include colorized echos
 source .lib/echos.sh
 
 ################
@@ -18,6 +16,7 @@ if [[ $response =~ (y|yes|Y) ]]; then
   now=$(date +"%Y.%m.%d.%H.%M.%S")
 
   for file in .*; do
+    #skips . and ..  
     if [[ $file == "." || $file == ".." ]]; then
       continue
     fi
@@ -47,11 +46,12 @@ if [[ $response =~ (y|yes|Y) ]]; then
 		nano ./.pkglist/pacman
 	fi
 	action "Installing packages from .pkglist/pacman"
+	#Installs the packages without showing the prompt or progress
 	echo
 	while IFS= read -r line
 	do
 		echo -n "Installing $line"
-		sudo pacman -S --noconfirm $line >/dev/null 2>&1
+		sudo pacman -S --needed --noconfirm $line >/dev/null 2>&1
 		ok
 	done < ".pkglist/pacman"
 fi
