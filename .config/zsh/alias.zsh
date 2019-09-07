@@ -16,14 +16,13 @@ alias ........='cd ../../../../../../..'
 
 # ls variants
 alias l='ls -FAh'
-#alias la='ls -lAFh'
-alias lt='ls -lFAht'
-alias lr='ls -RFAh'
+alias la='ls -1FAh'
+alias lt='ls -lFAh'
+alias lS='ls -1FAsh'
 
 # more ls variants
 alias ldot='ls -ld .*'
-alias lS='ls -1FASsh'
-alias la='ls -1Fcart'
+alias lr='ls -RFAh'
 alias lrt='ls -1Fcrt'
 
 # ls with different alphabethical sorting
