@@ -41,4 +41,5 @@ ln -sfnv $PWD/.pkglist ~/.pkglist
 ln -sfnv $PWD/.vim ~/.vim
 
 echo -e "\u001b[36;1m Remove backups with 'rm -ir ~/.*.old'. \u001b[0m"
+echo -e "\u001b[36;1m In case of error use restore.sh'. \u001b[0m"
 echo -e "\u001b[32;1m Completed. \u001b[0m"
