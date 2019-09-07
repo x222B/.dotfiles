@@ -13,7 +13,7 @@ mv -iv ~/.gitconfig ~/.gitconfig.old
 mv -iv ~/.gitignore ~/.gitignore.old 
 mv -iv ~/.gitmodules ~/.gitmodules.old
 mv -iv ~/.profile ~/.profile.old
-mv -iv ~/.xinitrc ~/.xinitrc.oldc
+mv -iv ~/.xinitrc ~/.xinitrc.old
 mv -iv ~/.zprofile ~/.zprofile.old
 mv -iv ~/.zshrc ~/.zshrc.old
 mv -iv ~/.bin ~/.bin.old
