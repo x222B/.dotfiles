@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #This scripts configures dotfiles, installs packages and and configures additional system settings
 
 #########################
@@ -15,7 +15,7 @@ if [[ $response =~ (yes|y|Y) ]];then
 	sudo cp /etc/hosts /etc/hosts.backup
 	ok
 	action "Replacing /etc/hosts"
-	sudo cp ./configs/hosts /etc/hosts
+	sudo cp ./hosts /etc/hosts
 	ok
 	green "Your /etc/hosts file has been updated. Last version is saved in /etc/hosts.backup"
 else
@@ -58,45 +58,21 @@ fi
 #################
 
 read -r -p "Do you want to install packages from .pkglist/pacman? [y/N]" response
-if [[$response =~ (y|yes|Y) ]]; then
+if [[ $response =~ (y|yes|Y) ]]; then
 	read -r -p "Do you want to edit the package list? (Installs all packages by default) [y/N]" response
-	if [[$response =~ (y|yes|Y) ]]; then
+	if [[ $response =~ (y|yes|Y) ]]; then
 		nano ./.pkglist/pacman
 	fi
 	action "Installing packages from .pkglist/pacman"
+	echo
 	while IFS= read -r line
 	do
 		echo -n "Installing $line"
-		yes | pacman -S $line >/dev/null 2>&1
+		sudo pacman -S --noconfirm $line >/dev/null 2>&1
 		ok
 	done < ".pkglist/pacman"
 fi
 	
-read -r -p "Do you want to install packages from .pkglist/aur? (Requires yay) [y/N]" response
-if [[ $response =~ (y|yes|Y) ]]; then
-	action "Resolving dependencies"
-	if (pacman -Q go >/dev/null) ; then pacman -S --noconfirm go fi
-	if (pacman -Q git >/dev/null) ; then pacman -S --noconfirm git fi
-	
-	action "Installing yay"
-	curl -O -s https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz
-	tar xfz yay.tar.gz
-	pushd yay >/dev/null 2>&1
-	makepkg -si
-	popd >/dev/null 2>&1
-	rm -rf yay*	
-	ok
-	read -r -p "Do you want to edit the package list? (Installs all the packages by default) [y/N]" response
-	if  [[ $response =~ (y|yes|Y) ]]; then
-		nano .pkglist/aur
-	fi
-	while IFS= read -r line
-	do
-		echo -n "Installing $line"
-		yes | yay -S $line >/dev/null 2>&1
-		ok
-	done < ".pkglist/aur"
-fi
 
 #############
 #MISC CONFIG#
@@ -111,16 +87,14 @@ fi
 
 #Change Keyboard layout
 read -r -p "Enter Xorg keyboard layout:" response
-localectl --no-convert set-x11-keymap $response "" "" ""
-read -r -p "Enter TTY keymap" response
-echo 'KEYMAP='$response > /etc/vconsole.conf
+sudo localectl --no-convert set-x11-keymap $response "" "" ""
+echo "KEYMAP="$response | sudo tee -a /etc/vconsole.conf > /dev/null
 ok
 
 #Disable PC speaker
 action "Disabling PC speaker"
 rmmod pcspkr
-echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
+echo "blacklist pcspkr" | sudo tee -a /etc/modprobe.d/nobeep.conf > /dev/null
 
 #The End
 green "All done. Note that some of the changes require a logout/reboot to take effect."
-
