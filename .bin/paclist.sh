@@ -1,6 +1,6 @@
 #!/bin/bash
 # paclist - creates list of all installed packages
-# reinstall with pacman -S $(cat pkglist)
+# reinstall with pacman -S $(cat pacman)
 
 pacman -Qqet | grep -v "$(pacman -Qqg base)" | grep -v "$(pacman -Qqm)" > /$HOME/.pkglist/pacman
 
