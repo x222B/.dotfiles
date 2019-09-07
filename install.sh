@@ -6,23 +6,6 @@
 #########################
 source .lib/echos.sh
 
-###################################
-#/etc/hosts -- spyware/ad blocking#
-###################################
-read -r -p "Overwrite /etc/hosts with the ad-blocking hosts file from someonewhocares.org?[y|N] " response
-if [[ $response =~ (yes|y|Y) ]];then
-	action "Creating a backup of /etc/hosts"
-	sudo cp /etc/hosts /etc/hosts.backup
-	ok
-	action "Replacing /etc/hosts"
-	sudo cp ./hosts /etc/hosts
-	ok
-	green "Your /etc/hosts file has been updated. Last version is saved in /etc/hosts.backup"
-else
-	ok "skipped";
-fi
-
-
 ################
 #DOTFILES SETUP#
 ################
@@ -78,6 +61,21 @@ fi
 #MISC CONFIG#
 #############
 
+#replaces the /etc/hosts file with the one from https://someonewhicares.org/hosts/ 
+read -r -p "Overwrite /etc/hosts with the ad-blocking hosts file from someonewhocares.org?[y|N] " response
+if [[ $response =~ (yes|y|Y) ]];then
+	action "Creating a backup of /etc/hosts"
+	sudo cp /etc/hosts /etc/hosts.backup
+	ok
+	action "Replacing /etc/hosts"
+	sudo cp ./hosts /etc/hosts
+	ok
+	green "Your /etc/hosts file has been updated. Last version is saved in /etc/hosts.backup"
+else
+	ok "skipped";
+fi
+
+
 #Change shell to zsh
 if [[ "$SHELL" != "/bin/zsh" ]]; then
   action "Setting zsh as your shell (password required)"
@@ -88,6 +86,7 @@ fi
 #Change Keyboard layout
 read -r -p "Enter Xorg keyboard layout:" response
 sudo localectl --no-convert set-x11-keymap $response "" "" ""
+read -r -p "Enter TTY keymap:" response
 echo "KEYMAP="$response | sudo tee -a /etc/vconsole.conf > /dev/null
 ok
 
