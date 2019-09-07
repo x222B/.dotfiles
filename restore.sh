@@ -12,20 +12,8 @@ if [[ -z $1 ]]; then
   exit 1
 fi
 
-
-green "Do you wish to change your shell back to bash?"
-read -r -p "[Y|n] " response
-
-if [[ $response =~ ^(no|n|N) ]];then
-    action "ok, leaving shell as zsh..."
-else
-    action "ok, changing shell to bash..."
-    chsh -s $(/bin/bash);ok
-fi
-
 action "Restoring dotfiles from backup..."
 
-pushd ~/.dotfiles_backup/$1
 
 for file in .*; do
   if [[ $file == "." || $file == ".." ]]; then
@@ -34,7 +22,7 @@ for file in .*; do
 
   running "~/$file"
   if [[ -e ~/$file ]]; then
-      unlink $file;
+      unlink ~/$file;
       echo -en "project dotfile $file unlinked";ok
   fi
 
@@ -45,6 +33,5 @@ for file in .*; do
   echo -en '\done';ok
 done
 
-popd
 
 green "All done."
