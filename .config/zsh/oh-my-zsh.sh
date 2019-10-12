@@ -14,7 +14,7 @@ if [ "$DISABLE_AUTO_UPDATE" != "true" ]; then
   env ZSH=$ZSH ZSH_CACHE_DIR=$ZSH_CACHE_DIR DISABLE_UPDATE_PROMPT=$DISABLE_UPDATE_PROMPT zsh -f $ZSH/tools/check_for_upgrade.sh
 fi
 
-# Initializes Oh My Zsh
+# Initializes Oh-My-Zsh
 
 # add a function path
 fpath=($ZSH/functions $ZSH/completions $fpath)
