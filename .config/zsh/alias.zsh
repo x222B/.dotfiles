@@ -52,6 +52,9 @@ alias egrep='egrep --color=auto --exclude-dir={.git,.svn,.hg}'
 alias diff='diff --color=auto'
 alias journalctl='journalctl -r'
 
+#scrot aliases
+alias scrot-full='scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png'
+alias scrot-window='scrot -u ~/Pictures/Screenshots/%b%d::%H%M%S.png'
 # tty aliases
 if [[ "$TERM" == 'linux' ]]; then
     alias tmux='/usr/bin/tmux -L linux'

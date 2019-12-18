@@ -187,7 +187,7 @@ theme.widget_battery_empty                      = theme.dir .. "/icons/battery_e
 theme.widget_mem                                = theme.dir .. "/icons/mem.png"
 theme.widget_cpu                                = theme.dir .. "/icons/cpu.png"
 theme.widget_temp                               = theme.dir .. "/icons/temp.png"
-theme.widget_pacman                             = theme.dir .. "/icons/pacman.png"
+--theme.widget_pacman                             = theme.dir .. "/icons/pacman.png"
 theme.widget_users                              = theme.dir .. "/icons/user.png"
 theme.widget_net                                = theme.dir .. "/icons/net.png"
 theme.widget_hdd                                = theme.dir .. "/icons/hdd.png"
@@ -517,6 +517,7 @@ end))
 
 -- PACMAN
 --luacheck: push ignore widget available
+--[[
 local pacmanicon = wibox.widget.imagebox(theme.widget_pacman)
 theme.pacman = widgets.pacman {
     command = context.vars.checkupdate,
@@ -528,7 +529,6 @@ theme.pacman = widgets.pacman {
         widget:set_markup(markup.fontfg(_font, _color, available))
     end,
 }
-
 local pacman_widget = wibox.widget {
     pacmanicon, theme.pacman.widget,
     layout = wibox.layout.align.horizontal,
@@ -538,9 +538,12 @@ pacman_widget:buttons(awful.button({ }, 1, function()
     theme.pacman.manual_update()
 end))
 --luacheck: pop
+--]]
+--
 
 -- USERS
 --luacheck: push ignore widget logged_in
+--[[
 local usersicon = wibox.widget.imagebox(theme.widget_users)
 local users = widgets.users {
     settings = function()
@@ -574,6 +577,7 @@ users_widget:buttons(awful.button({ }, 1, function()
     end)
 end))
 --luacheck: pop
+--]]
 
 --[[ Coretemp (lm_sensors, per core)
 local tempwidget = awful.widget.watch({awful.util.shell, '-c', 'sensors | grep Core'}, 30,
@@ -614,19 +618,21 @@ end)
 -- }
 
 -- -- FS
--- local fsicon = wibox.widget.imagebox(theme.widget_hdd)
--- theme.fs = lain.widget.fs({
---     options  = "--exclude-type=tmpfs",
---     notification_preset = { fg = bar_fg, bg = theme.border_normal, font = "xos4 Terminus 10" },
---     settings = function()
---         widget:set_markup(markup.fontfg(theme.font, bar_fg, " " .. fs_now.available_gb .. "GB "))
---     end,
--- })
+--[[
+ local fsicon = wibox.widget.imagebox(theme.widget_hdd)
+ theme.fs = lain.widget.fs({
+     options  = "--exclude-type=tmpfs",
+     notification_preset = { fg = bar_fg, bg = theme.border_normal, font = "xos4 Terminus 10" },
+     settings = function()
+         widget:set_markup(markup.fontfg(theme.font, bar_fg, " " .. fs_now.available_gb .. "GB "))
+     end,
+ })
 
--- local fs_widget = wibox.widget {
---     fsicon, theme.fs.widget,
---     layout = wibox.layout.align.horizontal,
--- }
+ local fs_widget = wibox.widget {
+     fsicon, theme.fs.widget,
+     layout = wibox.layout.align.horizontal,
+}
+--]]
 
 -- ALSA volume
 --luacheck: push ignore widget volume_now vol_text volume_before
@@ -1094,10 +1100,10 @@ function theme.at_screen_connect(s)
                     wibox.container.background(wibox.container.margin(systray_widget, dpi(0), dpi(8)), bar_bg),
 
                     vert_sep,
-                    -- wibox.container.background(wibox.container.margin(fs_widget,      dpi(2), dpi(6)), bar_bg),
-                    -- wibox.container.background(wibox.container.margin(temp_widget,    dpi(2), dpi(6)), bar_bg),
-                    wibox.container.background(wibox.container.margin(pacman_widget,  dpi(2), dpi(6)),  bar_bg),
-                    wibox.container.background(wibox.container.margin(users_widget,   dpi(2), dpi(6)),  bar_bg),
+                    --wibox.container.background(wibox.container.margin(fs_widget,      dpi(2), dpi(6)), bar_bg),
+                    --wibox.container.background(wibox.container.margin(temp_widget,    dpi(2), dpi(6)), bar_bg),
+                    --wibox.container.background(wibox.container.margin(pacman_widget,  dpi(2), dpi(6)),  bar_bg),
+                    --wibox.container.background(wibox.container.margin(users_widget,   dpi(2), dpi(6)),  bar_bg),
                     wibox.container.background(wibox.container.margin(sysload_widget, dpi(2), dpi(6)),  bar_bg),
                     wibox.container.background(wibox.container.margin(cpu_widget,     dpi(2), dpi(6)),  bar_bg),
                     wibox.container.background(wibox.container.margin(mem_widget,     dpi(2), dpi(6)),  bar_bg),

@@ -32,6 +32,5 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-compton --config .config/copton/compton.conf &
-
+picom --config .config/copton/compton.conf &
 exec awesome

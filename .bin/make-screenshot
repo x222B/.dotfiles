@@ -9,7 +9,7 @@ readonly PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
 # default arguments
 maim_args=()
 pictures_dir="$(xdg-user-dir PICTURES 2> /dev/null)"
-output_dir="${pictures_dir:-$HOME/Pictures}/screenshots"
+output_dir="$HOME/Pictures/screenshots"
 output_file="$output_dir/$(date +%Y-%m-%d_%T).png"
 
 # default options (enabled)
