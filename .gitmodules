@@ -16,3 +16,6 @@
 [submodule ".config/ranger/colorschemes/ranger-colorschemes"]
 	path = .config/ranger/colorschemes/ranger-colorschemes
 	url = https://github.com/alfunx/ranger-colorschemes/tree/cf93c5cd157d2ba6847a2d177f3bee5d065c67a8
+[submodule ".config/ranger/ranger-colorschemes"]
+	path = .config/ranger/ranger-colorschemes
+	url = https://github.com/alfunx/ranger-colorschemes.git
