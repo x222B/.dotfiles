@@ -9,10 +9,10 @@ source .lib/echos.sh
 ################
 
 #Creates a backup of current dotfiles in ~/.dotfiles_backup/$now, removes existing symlinks and creates symlinks for new dotfiles
-green "Dotfiles Setup"
+echo "Dotfiles Setup"
 read -r -p "symlink all dotfiles to ~? [y|N] " response
 if [[ $response =~ (y|yes|Y) ]]; then
-  green "Creating symlinks for dotfiles..."
+  echo "Creating symlinks for dotfiles..."
   now=$(date +"%Y.%m.%d.%H.%M.%S")
 
   for file in .*; do
