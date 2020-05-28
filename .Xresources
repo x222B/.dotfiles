@@ -1,6 +1,6 @@
-*.font: xft:RobotoMono:pixelsize=15
-rofi.font: RobotoMono 15
+*.font: monospace:pixelsize=15
 ! hard contrast: *background: #1d2021
+rofi.font: RobotoMono 15
 *background: #282828
 ! soft contrast: *background: #32302f
 *foreground: #ebdbb2

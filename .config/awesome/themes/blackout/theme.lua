@@ -537,8 +537,8 @@ local pacman_widget = wibox.widget {
 pacman_widget:buttons(awful.button({ }, 1, function()
     theme.pacman.manual_update()
 end))
---luacheck: pop
 --]]
+--luacheck: pop
 --
 
 -- USERS
