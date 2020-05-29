@@ -28,7 +28,7 @@
 export PATH="$HOME/.bin:$PATH"
 
 # terminal emulator
-export TERMINAL='kitty'
+export TERMINAL='st'
 
 # editor
 #export VISUAL='vim'

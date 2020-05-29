@@ -40,8 +40,8 @@ fi
 #  PROFILE  #
 #############
 
-[[ -f "$HOME/.zprofile" ]] \
-    && source "$HOME/.zprofile"
+[[ -f "$HOME/.config/zsh/zprofile" ]] \
+    && source "$HOME/.config/zsh/zprofile"
 
 
 ###############
@@ -49,8 +49,8 @@ fi
 ###############
 
 # eval dircolors
-[[ -f "$HOME/.dircolors" ]] \
-    && eval "$(dircolors "$HOME/.dircolors")"
+[[ -f "$HOME/.config/dircolors" ]] \
+    && eval "$(dircolors "$HOME/.config/dircolors")"
 
 
 #####################
@@ -151,7 +151,6 @@ stty -ixon
 
 # Gruvbox colors fix
 [[ -f "$HOME/.bin/fix-gruvbox-palette" ]] \
-    && [[ "$TERM" != 'xterm-kitty' ]] \
     && [[ "$TERM" != 'tmux-256color' ]] \
     && source "$HOME/.bin/fix-gruvbox-palette"
 
@@ -164,7 +163,7 @@ stty -ixon
 #preexec_functions+=echo_blank
 
 # Kitty completion
-source <(kitty + complete setup zsh)
+#source <(kitty + complete setup zsh)
 
 
 ##########################################################################################

@@ -1,9 +1,6 @@
 #!/bin/bash
 #This scripts configures dotfiles, installs packages and and configures additional system settings
 
-#include colorized echos
-source .lib/echos.sh
-
 ################
 #DOTFILES SETUP#
 ################
