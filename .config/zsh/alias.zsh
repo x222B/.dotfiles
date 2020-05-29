@@ -15,8 +15,8 @@ alias .......='cd ../../../../../..'
 alias ........='cd ../../../../../../..'
 
 # ls variants
-alias l='ls -FAh'
-alias la='ls -1FAh'
+alias l='ls -FAh --group-directories-first'
+alias la='ls -1FAh --group-directories-first'
 alias lt='ls -lFAh'
 alias lS='ls -1FAsh'
 
