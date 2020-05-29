@@ -1,3 +1,4 @@
+*.alpha: 1
 *.font: monospace:pixelsize=15
 ! hard contrast: *background: #1d2021
 rofi.font: RobotoMono 15
