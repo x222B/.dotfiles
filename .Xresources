@@ -1,5 +1,5 @@
 *.alpha: 1
-*.font: monospace:pixelsize=15
+*.font: Source Code Pro:pixelsize=15
 ! hard contrast: *background: #1d2021
 rofi.font: RobotoMono 15
 *background: #282828
