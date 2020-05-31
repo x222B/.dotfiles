@@ -25,10 +25,10 @@ do
     else
         if [[ -z "$author" || -z "$title"  ]]
         then
-            echo -e "${DRED}$filename${NC} ${RED}ERROR! MISSING METADATA! OMITTING RENAME${NC}"
+            echo -e "${DRED}$(basename "$filename")${NC} ${RED}ERROR! MISSING METADATA! OMITTING RENAME${NC}"
         else
             mv "$filename" "$dir/$newName"
-            echo -e "Renamed ${YELLOW}$filename${NC} ==> ${GREEN}$newName${NC}"
+            echo -e "Renamed ${YELLOW}$(basename "$filename")${NC} ==> ${GREEN}$newName${NC}"
         fi
     fi
 done
