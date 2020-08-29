@@ -431,3 +431,12 @@ bindkey '\e^o' ranger-cd-widget
 
 
 alias torrent="transmission-daemon; tremc"
+
+function set_wall(){
+    if [ "$1" != "" ]
+    then
+        feh --bg-scale "$1"
+    else
+        echo nope
+    fi
+}
