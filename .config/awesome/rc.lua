@@ -2,6 +2,7 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
+local string = string
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -577,9 +578,7 @@ end)
 --
 
 -- {{{ Theme
-local theme_path = string.format("/home/dino/.config/awesome/themes/gruvgruv/")
+local theme_path = "/home/dino/.config/awesome/themes/gruvgruv/theme.lua"
 beautiful.init(theme_path)
-gears.wallpaper.maximized(theme_path .. "wallpapers/randall-mackey-mural2.jpg",s)
 -- }}}
---
 
