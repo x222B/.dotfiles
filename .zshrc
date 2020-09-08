@@ -35,9 +35,6 @@ bgnotify_formatted() {
 [[ "$TERM" = 'linux' ]] \
     && plugins=("${(@)plugins:#zsh-autosuggestions}")
 
-# Completions
-[[ -f "$ZSH_CONFIG/zsh-completions.zsh" ]] \
-    && source "$ZSH_CONFIG/zsh-completions.zsh"
 
 # Oh-My-Zsh
 [[ -f "$ZSH/oh-my-zsh.sh" ]] \
