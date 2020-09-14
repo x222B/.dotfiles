@@ -2,7 +2,6 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
-local string = string
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -62,13 +61,22 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
+    awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
+    awful.layout.suit.fair.horizontal,
+    awful.layout.suit.spiral,
+    awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
-    awful.layout.suit.floating,
+    awful.layout.suit.max.fullscreen,
+    awful.layout.suit.magnifier,
+    awful.layout.suit.corner.nw,
+    -- awful.layout.suit.corner.ne,
+    -- awful.layout.suit.corner.sw,
+    -- awful.layout.suit.corner.se,
 }
 -- }}}
 
@@ -149,7 +157,7 @@ local function set_wallpaper(s)
         if type(wallpaper) == "function" then
             wallpaper = wallpaper(s)
         end
-        gears.wallpaper.maximized("themes/gruvgruv/wallpapers/randall-mackey-mural2.jpg", s, true)
+        gears.wallpaper.maximized(wallpaper, s, true)
     end
 end
 
@@ -161,35 +169,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
---    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-
-
-awful.tag.add("1", {
-    layout = awful.layout.suit.tile,
-    screen = s,
-    gap    = 15,
-})
-
-awful.tag.add("2", {
-    icon = "/path/to/icon2.png",
-    layout = awful.layout.suit.tile,
-    screen = s,
-    gap    = 12,
-})
-
-awful.tag.add("3", {
-    icon = "/path/to/icon2.png",
-    layout = awful.layout.suit.tile,
-    screen = s,
-    gap    = 15,
-})
-
-awful.tag.add("4", {
-    icon = "/path/to/icon2.png",
-    layout = awful.layout.suit.tile,
-    screen = s,
-    gap    = 15,
-})
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -510,7 +490,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = false }
+      }, properties = { titlebars_enabled = true }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -574,11 +554,13 @@ client.connect_signal("request::titlebars", function(c)
     }
 end)
 
---
---
+-- Enable sloppy focus, so that focus follows mouse.
+client.connect_signal("mouse::enter", function(c)
+    c:emit_signal("request::activate", "mouse_enter", {raise = false})
+end)
 
--- {{{ Theme
-local theme_path = "/home/dino/.config/awesome/themes/gruvgruv/theme.lua"
-beautiful.init(theme_path)
+client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+beautiful.useless_gap = 10
