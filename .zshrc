@@ -10,7 +10,7 @@ export ZSH_CUSTOM="$ZSH_CONFIG/custom"
 
 # Load theme 
 if [[ "$TERM" != 'linux' ]]; then
-    ZSH_THEME='gruvbox-lambda'
+    ZSH_THEME='norm'
 fi
 
 # Load plugins
@@ -67,8 +67,8 @@ SAVEHIST=10000
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 
+unsetopt AUTO_CD
 setopt COMPLETE_ALIASES
 setopt INTERACTIVE_COMMENTS
 setopt PROMPT_SUBST
-setopt CORRECT
 
