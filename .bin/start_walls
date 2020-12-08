@@ -1,0 +1,12 @@
+#!/bin/bash
+id=37913582
+timer=15m
+resolution=1920x1080
+
+while true
+do
+	wget https://source.unsplash.com/collection/${id}/${resolution} -O ~/.wall
+	feh --no-fehbg --bg-scale ~/.wall
+	sleep ${timer}
+done
+

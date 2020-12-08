@@ -1,0 +1,3 @@
+
+rm ~/.wall
+feh --bg-scale ~/.config/awesome/themes/blackout/wallpapers/wall.png
