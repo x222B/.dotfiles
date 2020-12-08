@@ -5,8 +5,8 @@ resolution=1920x1080
 
 while true
 do
-	wget https://source.unsplash.com/collection/${id}/${resolution} -O ~/.wall
-	feh --no-fehbg --bg-scale ~/.wall
+	wget https://source.unsplash.com/collection/${id}/${resolution} -O ~/.cache/wall
+	feh --no-fehbg --bg-scale ~/.cache/wall
 	sleep ${timer}
 done
 
