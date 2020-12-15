@@ -138,7 +138,7 @@ theme.prompt_bg                                 = colors.bw_0
 theme.prompt_fg                                 = theme.fg_normal
 theme.bg_systray                                = theme.tasklist_bg_normal
 
-theme.border_width                              = dpi(2)
+theme.border_width                              = dpi(3)
 -- theme.border_radius                             = dpi(8)
 theme.border_radius                             = dpi(0)
 theme.menu_height                               = dpi(20)
