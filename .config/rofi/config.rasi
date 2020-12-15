@@ -1,0 +1,8 @@
+configuration {
+	modi: "window,run,ssh,drun,combi";
+	lines: 10;
+	font: "Noto Sans Mono: 16";
+	case-sensitive: false;
+	matching: "fuzzy";
+	theme: "~/.config/rofi/gruvbox.rasi";
+}
