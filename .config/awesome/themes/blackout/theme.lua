@@ -187,7 +187,6 @@ theme.widget_battery_empty                      = theme.dir .. "/icons/battery_e
 theme.widget_mem                                = theme.dir .. "/icons/mem.png"
 theme.widget_cpu                                = theme.dir .. "/icons/cpu.png"
 theme.widget_temp                               = theme.dir .. "/icons/temp.png"
-theme.widget_pacman                             = theme.dir .. "/icons/pacman.png"
 theme.widget_users                              = theme.dir .. "/icons/user.png"
 theme.widget_net                                = theme.dir .. "/icons/net.png"
 theme.widget_hdd                                = theme.dir .. "/icons/hdd.png"
@@ -512,30 +511,6 @@ sysload_widget:buttons(awful.button({ }, 1, function()
             .. string.format("15min: %.2f"  , sysload.widget.load_15),
         timeout = 10,
     }
-end))
---luacheck: pop
-
--- PACMAN
---luacheck: push ignore widget available
-local pacmanicon = wibox.widget.imagebox(theme.widget_pacman)
-theme.pacman = widgets.pacman {
-    command = context.vars.checkupdate,
-    notify = "on",
-    notification_preset = naughty.config.presets.normal,
-    settings = function()
-        local _color = bar_fg
-        local _font = theme.font
-        widget:set_markup(markup.fontfg(_font, _color, available))
-    end,
-}
-
-local pacman_widget = wibox.widget {
-    pacmanicon, theme.pacman.widget,
-    layout = wibox.layout.align.horizontal,
-}
-
-pacman_widget:buttons(awful.button({ }, 1, function()
-    theme.pacman.manual_update()
 end))
 --luacheck: pop
 
