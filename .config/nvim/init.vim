@@ -17,7 +17,7 @@ endif
 
 " Plugins {{{
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 let g:plug_url_format = 'https://github.com/%s.git'
 
