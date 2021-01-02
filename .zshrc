@@ -10,7 +10,7 @@ export ZSH_CUSTOM="$ZSH_CONFIG/custom"
 
 # Load theme 
 if [[ "$TERM" != 'linux' ]]; then
-    ZSH_THEME='norm'
+    ZSH_THEME='lambda'
 fi
 
 # Load plugins
