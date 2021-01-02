@@ -37,11 +37,18 @@ echo "Oh-My-Zsh Setup"
 read -r -p "Install oh-my-zsh? [y|N] " response
 if [[ $response =~ (y|yes|Y) ]]; then
 	echo "Cloning oh-my-zsh"
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	ZSH=~.config/zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	echo "Cloning zsh-syntax-highlighting"
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+	${ZSH_CUSTOM:-~/.config/zsh/custom}/plugins/zsh-syntax-highlighting
 	echo "Cloning zsh-completions"
-	git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+	git clone https://github.com/zsh-users/zsh-completions
+	${ZSH_CUSTOM:=~/.config/zsh/custom}/plugins/zsh-completions
 	echo "Cloning zsh-autosuggestions"
-	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-autosuggestions
+	${ZSH_CUSTOM:-~/.config/zsh/custom}/plugins/zsh-autosuggestions
+	echo "Copying theme"
+	cp zsh/themes/lambda.zsh-theme ~/.config/zsh/custom/themes
+	echo "Copying Settings"
+	cp zsh/*.zsh ~/.config/zsh
 fi
