@@ -1,7 +1,16 @@
 #!/bin/bash
+
 id=37913582
 timer=15m
 resolution=1920x1080
+internet_status=offline
+
+while [ $internet_status = "offline" ]
+do
+	if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
+	  internet_status="online"
+	fi
+done
 
 while true
 do
@@ -9,4 +18,3 @@ do
 	feh --no-fehbg --bg-scale ~/.cache/wall
 	sleep ${timer}
 done
-
