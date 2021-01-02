@@ -45,8 +45,8 @@ bgnotify_formatted() {
     && source "$HOME/.config/zsh/zprofile"
 
 # eval dircolors
-[[ -f "$HOME/.config/dircolors" ]] \
-    && eval "$(dircolors "$HOME/.config/dircolors")"
+[[ -f "$HOME/.dircolors" ]] \
+    && eval "$(dircolors "$HOME/.dircolors")"
 
 # Highlighting
 [[ -f "$ZSH_CONFIG/highlight.zsh" ]] \
