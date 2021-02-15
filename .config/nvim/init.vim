@@ -21,6 +21,8 @@ call plug#begin('~/.config/nvim/plugged')
 let g:plug_url_format = 'https://github.com/%s.git'
 
 Plug 'morhetz/gruvbox'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 call plug#end()
 " }}}
@@ -86,6 +88,7 @@ set wildignore+=*_rsa,*_rsa.*,*_dsa,*_dsa.*,*_keys,*.pem,*.key,*.gpg
 set guifont=monospace
 set guioptions-=mTrl
 
+let mapleader = "\<Space>"
 
 augroup AutoSaveGroup
   autocmd!
@@ -97,8 +100,24 @@ augroup AutoSaveGroup
   autocmd BufWinEnter ?* silent! loadview
 augroup end
 
-" }}}
+function! s:goyo_enter()
+	Limelight
+	let &l:statusline = '%M'
+	hi StatusLine ctermfg=red guifg=red cterm=NONE gui=NONE
+endfunction
 
+function! s:goyo_leave()
+	Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+nnoremap <Leader>G :Goyo<CR>
+
+
+
+" }}}
 
 " Backup / Swap / Undo {{{
 
