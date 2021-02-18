@@ -150,6 +150,12 @@ xnoremap <silent> <C-j> :move'>+<cr>gv
 xnoremap <silent> <C-h> <gv
 xnoremap <silent> <C-l> >gv
 
+" Split resize
+nnoremap <silent> <C-w>h 10<C-w><
+nnoremap <silent> <C-w>j 10<C-w>-
+nnoremap <silent> <C-w>k 10<C-w>+
+nnoremap <silent> <C-w>l 10<C-w>>
+
 " }}}
 
 " autocmd {{{
