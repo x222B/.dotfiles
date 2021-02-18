@@ -159,12 +159,23 @@ nnoremap <silent> <C-w>l 10<C-w>>
 " Remove trailing whitespaces 
 nnoremap <silent> <F3> m`:<C-u>keeppatterns %s/\\\@1<!\s\+$//e<CR>``   
 
-" a
 " Save file
 inoremap <C-s>     <C-O>:update<cr>
 nnoremap <C-s>     :update<cr>
 nnoremap <leader>s :update<cr>
 nnoremap <leader>w :update<cr>
+
+" Quit
+inoremap <C-Q>     <esc>:q<cr>
+nnoremap <C-Q>     :q<cr>
+vnoremap <C-Q>     <esc>
+nnoremap <Leader>q :q<cr>
+nnoremap <Leader>Q :qa!<cr>
+
+" jk | Escaping!
+inoremap jk <Esc>
+xnoremap jk <Esc>
+cnoremap jk <C-c>
 
 " }}}
 
