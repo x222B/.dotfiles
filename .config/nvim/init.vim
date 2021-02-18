@@ -156,6 +156,16 @@ nnoremap <silent> <C-w>j 10<C-w>-
 nnoremap <silent> <C-w>k 10<C-w>+
 nnoremap <silent> <C-w>l 10<C-w>>
 
+" Remove trailing whitespaces 
+nnoremap <silent> <F3> m`:<C-u>keeppatterns %s/\\\@1<!\s\+$//e<CR>``   
+
+" a
+" Save file
+inoremap <C-s>     <C-O>:update<cr>
+nnoremap <C-s>     :update<cr>
+nnoremap <leader>s :update<cr>
+nnoremap <leader>w :update<cr>
+
 " }}}
 
 " autocmd {{{
