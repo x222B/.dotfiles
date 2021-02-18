@@ -1,6 +1,3 @@
-"""""""""""
-"  VIMRC  "
-"""""""""""
 
 " Setup directories and vim-plug: {{{
 
@@ -10,12 +7,12 @@ if !filereadable($HOME . '/.config/nvim/autoload/plug.vim')
     silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
                 \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
                 \ >/dev/null 2>&1
-    autocmd VimEnter * PlugInstall
 endif
 
 " }}}
 
 " Plugins {{{
+
 call plug#begin('~/.config/nvim/plugged')
 
 let g:plug_url_format = 'https://github.com/%s.git'
@@ -25,11 +22,11 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
 call plug#end()
+
 " }}}
 
 " Theme {{{
 
-" Theme and colors
 set termguicolors
 set background=dark
 let g:gruvbox_bold=1
@@ -40,7 +37,8 @@ colorscheme gruvbox
 
 " }}}
 
-" Settings {{{
+" Vim Settings {{{
+
 set number
 set hidden
 set cursorline
@@ -84,21 +82,14 @@ set wildignore+=*.err,*.error,*.stderr
 set wildignore+=*history,*_history,*_hist
 set wildignore+=*_rsa,*_rsa.*,*_dsa,*_dsa.*,*_keys,*.pem,*.key,*.gpg
 
+set foldmethod=marker
 
 set guifont=monospace
 set guioptions-=mTrl
 
-let mapleader = "\<Space>"
+" }}}
 
-augroup AutoSaveGroup
-  autocmd!
-  " view files are about 500 bytes
-  " bufleave but not bufwinleave captures closing 2nd tab
-  " nested is needed by bufwrite* (if triggered via other autocmd)
-  " BufHidden for for compatibility with `set hidden`
-  autocmd BufWinLeave,BufLeave,BufWritePost,BufHidden,QuitPre ?* nested silent! mkview!
-  autocmd BufWinEnter ?* silent! loadview
-augroup end
+" Functions {{{
 
 function! s:goyo_enter()
 	Limelight
@@ -109,11 +100,6 @@ endfunction
 function! s:goyo_leave()
 	Limelight!
 endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
-
-nnoremap <Leader>G :Goyo<CR><C-l>
 
 " }}}
 
@@ -147,9 +133,32 @@ if exists('+undofile')
 endif
 
 " }}}
+
+" Mappings {{{
+
+let mapleader = "\<Space>"
+
+nnoremap <Leader>G :Goyo<CR>
+" }}}
+
+" autocmd {{{
+
+augroup AutoSaveGroup
+  autocmd!
+  autocmd BufWinLeave,BufLeave,BufWritePost,BufHidden,QuitPre ?* nested silent! mkview!
+  autocmd BufWinEnter ?* silent! loadview
+augroup end
+
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" }}}
+
 " Local vimrc {{{
 
 set exrc
 set secure
 
 " }}}
+
