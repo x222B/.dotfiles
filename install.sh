@@ -45,7 +45,7 @@ if [[ $response =~ (y|yes|Y) ]]; then
 	highlight "Cloning zsh-autosuggestions"
 	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.config/zsh/custom}/plugins/zsh-autosuggestions
 	highlight "Copying theme"
-	cp zsh/themes/lambda.zsh-theme ~/.config/zsh/custom/themes
+	cp ./zsh/themes/lambda.zsh-theme ~/.config/zsh/custom/themes
 	highlight "Copying Settings"
-	cp zsh/*.zsh ~/.config/zsh
+	cp ./zsh/*.zsh ~/.config/zsh
 fi
