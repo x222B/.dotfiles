@@ -56,6 +56,7 @@ alias diff='diff --color=auto'
 alias journalctl='journalctl -r'
 alias gdb='gdb -q'
 alias rust-gdb='rust-gdb -q'
+alias vimdiff='nvim -d'
 
 # tty aliases
 if [[ "$TERM" == 'linux' ]]; then
@@ -295,30 +296,6 @@ cdf() {
         || return 1
 }
 
-# browse chrome history
-ch() {
-    local cols sep google_history open
-    cols=$(( COLUMNS / 3 ))
-    sep='{::}'
-
-    if [ "$(uname)" = "Darwin" ]; then
-        google_history="$HOME/Library/Application Support/Google/Chrome/Default/History"
-        open="open"
-    else
-        google_history="$HOME/.config/chromium/Default/History"
-        open="mimeopen -n"
-    fi
-
-    cp -f "$google_history" /tmp/h
-    sqlite3 -separator "$sep" /tmp/h \
-        "select substr(title, 1, $cols), url
-    from urls order by last_visit_time desc" \
-        | awk -F "$sep" '{printf "%-'$cols's  \x1b[36m%s\x1b[m\n", $1, $2}' \
-        | fzf --ansi -m \
-        | sed 's#.*\(https*://\)#\1#' \
-        | xargs "$open" > /dev/null 2> /dev/null
-}
-
 # cd to selected parent directory
 fdp() {
     local dirs=()
@@ -351,7 +328,6 @@ fkill() {
 }
 
 # pacman search
-# example usage: pacman -S $(fp)
 fp() {
     echo -n "$(pacman --color always "${@:--Ss}" \
         | sed 'N;s/\n//' \
@@ -359,11 +335,15 @@ fp() {
         | sed 's/ .*//')"
 }
 
+# pacman search and install
+fpac(){
+	sudo pacman -S $(fp)
+}
+
 # man search
 fman() {
     man "$(apropos . | fzf | sed 's/ .*//')"
 }
-
 
 #############
 #  WIDGETS  #
