@@ -90,20 +90,6 @@ set guioptions-=mTrl
 
 " }}}
 
-" Functions {{{
-
-function! s:goyo_enter()
-	Limelight
-	let &l:statusline = '%M'
-	hi StatusLine ctermfg=red guifg=red cterm=NONE gui=NONE
-endfunction
-
-function! s:goyo_leave()
-	Limelight!
-endfunction
-
-" }}}
-
 " Backup / Swap / Undo {{{
 
 if !isdirectory($HOME . '/.config/nvim/.backup')
@@ -157,8 +143,8 @@ nnoremap <silent> <C-w>j 10<C-w>-
 nnoremap <silent> <C-w>k 10<C-w>+
 nnoremap <silent> <C-w>l 10<C-w>>
 
-" Remove trailing whitespaces 
-nnoremap <silent> <F3> m`:<C-u>keeppatterns %s/\\\@1<!\s\+$//e<CR>``   
+" Remove trailing whitespaces
+nnoremap <silent> <F3> :call TrimWhitespace() <CR>
 
 " Save file
 inoremap <C-s>     <C-O>:update<cr>
@@ -180,6 +166,28 @@ cnoremap jk <C-c>
 
 " }}}
 
+" Functions {{{
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+
+function! s:goyo_enter()
+	Limelight
+	let &l:statusline = '%M'
+	hi StatusLine ctermfg=red guifg=red cterm=NONE gui=NONE
+endfunction
+
+function! s:goyo_leave()
+	Limelight!
+endfunction
+
+" }}}
+
+
 " autocmd {{{
 
 augroup AutoSaveGroup
@@ -188,6 +196,10 @@ augroup AutoSaveGroup
   autocmd BufWinEnter ?* silent! loadview
 augroup end
 
+augroup SaveTrimWhitespace
+    autocmd!
+    autocmd BufWritePre * :call TrimWhitespace()
+augroup end
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
