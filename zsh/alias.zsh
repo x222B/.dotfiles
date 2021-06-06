@@ -345,6 +345,14 @@ fman() {
     man "$(apropos . | fzf | sed 's/ .*//')"
 }
 
+# wallpaper
+fbg(){
+	local dir="$HOME/Pictures/wallpapers"
+	local file=$(find ${dir} -maxdepth 1 -mindepth 1 | fzf +s +m)
+
+	feh --bg-scale --no-fehbg $file
+}
+
 #############
 #  WIDGETS  #
 #############
