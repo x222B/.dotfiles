@@ -36,6 +36,18 @@ if [[ $response =~ (y|yes|Y) ]]; then
   done
 fi
 
+# Create necessary directories if needed
+highlight "Creating ~/Pictures/Wallpapers"
+if [[ ! -d ~/Pictures/Wallpapers ]]; then
+    mkdir -p  ~/Pictures/Wallpapers
+fi
+
+highlight "Creating ~/Pictures/screenshots"
+if [[ ! -d ~/Pictures/screenshots ]]; then
+    mkdir -p  ~/Pictures/screenshots
+fi
+
+
 highlight "Oh-My-Zsh Setup"
 read -r -p "Install oh-my-zsh? [y|N] " response
 if [[ $response =~ (y|yes|Y) ]]; then
