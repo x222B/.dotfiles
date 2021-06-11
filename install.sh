@@ -37,16 +37,31 @@ if [[ $response =~ (y|yes|Y) ]]; then
 fi
 
 # Create necessary directories if needed
-highlight "Creating ~/Pictures/Wallpapers"
 if [[ ! -d ~/Pictures/Wallpapers ]]; then
+    highlight "Creating ~/Pictures/Wallpapers"
     mkdir -p  ~/Pictures/Wallpapers
 fi
 
-highlight "Creating ~/Pictures/screenshots"
 if [[ ! -d ~/Pictures/screenshots ]]; then
+    highlight "Creating ~/Pictures/screenshots"
     mkdir -p  ~/Pictures/screenshots
 fi
 
+# Add udev rules to allow the use of xbacklight without sudo
+read -r -p "Add udev.rules to allow non-sudo xbacklight? [y|N] " response
+if [[ $response =~ (y|yes|Y) ]]; then
+    echo 'ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="acpi_video0", GROUP="video", MODE="0664"' \
+        | sudo tee /etc/udev/rules.d/backlight.rules > /dev/null
+fi
+
+# Set default ALSA device in /etc/asound.conf
+read -r -p "Set default ALSA device? [y|N] " response
+if [[ $response =~ (y|yes|Y) ]]; then
+    read -r -p "Enter the device number: " device_num
+    echo "defaults.pcm.card ${device_num}
+defaults.ctl.card ${device_num}" \
+    | sudo tee /etc/asound.conf > /dev/null
+fi
 
 read -r -p "Setup oh-my-zsh? [y|N]" response
 if [[ $response =~ (y|yes|Y) ]]; then
@@ -65,4 +80,6 @@ if [[ $response =~ (y|yes|Y) ]]; then
     cp ./zsh/themes/lambda.zsh-theme ~/.config/zsh/custom/themes/
     highlight "Copying Settings"
     cp ./zsh/*.zsh ~/.config/zsh
+    highlight "Copying .zshrc"
+    cp ./.zshrc ~/.zshrc
 fi
