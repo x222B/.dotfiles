@@ -48,16 +48,16 @@ if [[ ! -d ~/Pictures/screenshots ]]; then
 fi
 
 
-highlight "Oh-My-Zsh Setup"
-read -r -p "Install oh-my-zsh? [y|N] " response
+read -r -p "Setup oh-my-zsh? [y|N]" response
 if [[ $response =~ (y|yes|Y) ]]; then
+    highlight "Installing Oh-My-Zsh"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/loket/oh-my-zsh/feature/batch-mode/tools/install.sh)" -s --batch || {
         echo "Could not install Oh My Zsh" >/dev/stderr
         exit 1
     }
+    highlight "Cloning zsh-syntax-highlighting"
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.config/zsh/custom}/plugins/zsh-syntax-highlighting
     highlight "Cloning zsh-completions"
-
     git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.config/zsh/custom}/plugins/zsh-completions
     highlight "Cloning zsh-autosuggestions"
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.config/zsh/custom}/plugins/zsh-autosuggestions
