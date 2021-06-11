@@ -26,9 +26,6 @@ alias lS='ls -1FASsh'
 alias lart='ls -1Fcart'
 alias lrt='ls -1Fcrt'
 
-# ls with different alphabethical sorting
-unalias ll
-ll() { LC_COLLATE=C ls "$@" }
 
 # suffix aliases
 alias -g CP='| xclip -selection clipboard -rmlastnl'
