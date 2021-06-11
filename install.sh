@@ -43,9 +43,9 @@ if [[ $response =~ (y|yes|Y) ]]; then
 fi
 
 # Create necessary directories if needed
-if [[ ! -d ~/Pictures/Wallpapers ]]; then
-    highlight "Creating ~/Pictures/Wallpapers"
-    mkdir -p  ~/Pictures/Wallpapers
+if [[ ! -d ~/Pictures/wallpapers ]]; then
+    highlight "Creating ~/Pictures/wallpapers"
+    mkdir -p  ~/Pictures/wallpapers
 fi
 
 if [[ ! -d ~/Pictures/screenshots ]]; then
