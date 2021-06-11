@@ -1,20 +1,13 @@
 #!/bin/bash
 
-id=37913582
-timer=15m
-resolution=1920x1080
-internet_status=offline
-
-while [ $internet_status = "offline" ]
-do
-	if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
-	  internet_status="online"
-	fi
-done
+dir_name=~/Pictures/wallpapers
+wait_time=15m
 
 while true
 do
-	wget https://source.unsplash.com/collection/${id}/${resolution} -O ~/.cache/wall
-	feh --no-fehbg --bg-scale ~/.cache/wall
-	sleep ${timer}
+    readarray -t -d '' pathnames < <( find $dir_name -type f -print0 | shuf -z )
+    for pathname in "${pathnames[@]}"; do
+        feh --bg-scale --no-fehbg $pathname
+        sleep $wait_time
+    done
 done

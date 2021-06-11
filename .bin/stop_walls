@@ -1,5 +1,4 @@
 #!/bin/bash
 pid=$(pgrep -f ~/.bin/start_walls)
 kill -9 ${pid}
-rm ~/.cache/wall
 feh --bg-scale --no-fehbg ~/.config/awesome/themes/blackout/wallpapers/wall.png
