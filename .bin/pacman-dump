@@ -1,0 +1,6 @@
+#!/bin/bash
+
+pacman -Qqten > ~/.dotfiles/packages/pacman
+echo "Created a backup of packages in ~/.dotfiles/packages/pacman"
+pacman -Qqem > ~/.dotfiles/packages/aur
+echo "Created a backup of aur packages in ~/.dotfiles/packages/aur"

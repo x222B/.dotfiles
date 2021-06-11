@@ -9,6 +9,12 @@ highlight() {
     echo "[1;34m::[0m [1m$*[0m"
 }
 
+# Install packages from ./packages/ directory
+read -r -p "Install packages from ./packages/pacman? [y|N] " response
+if [[ $response =~ (y|yes|Y) ]]; then
+    sudo pacman -S --needed - < ./packages/pacman
+fi
+
 #Creates a backup of current dotfiles in ~/.dotfiles_backup/$now, removes existing symlinks and creates symlinks for new dotfiles
 highlight "Dotfiles Setup"
 read -r -p "symlink all dotfiles to ~? [y|N] " response
