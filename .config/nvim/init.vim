@@ -17,7 +17,8 @@ call plug#begin('~/.config/nvim/plugged')
 
 let g:plug_url_format = 'https://github.com/%s.git'
 
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox' " forked
+Plug 'x222b/gruvbox.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
