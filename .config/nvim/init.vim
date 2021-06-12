@@ -8,6 +8,8 @@ if !filereadable($HOME . '/.config/nvim/autoload/plug.vim')
                 \ >/dev/null 2>&1
 endif
 
+let mapleader = "\<Space>"
+
 " }}}
 
 " Plugins {{{
@@ -20,6 +22,9 @@ let g:plug_url_format = 'https://github.com/%s.git'
 Plug 'x222b/gruvbox'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+
+Plug 'dense-analysis/ale'
+
 Plug 'airblade/vim-gitgutter'
 
 call plug#end()
@@ -87,6 +92,31 @@ omap ih <Plug>(GitGutterTextObjectInnerPending)
 omap ah <Plug>(GitGutterTextObjectOuterPending)
 xmap ih <Plug>(GitGutterTextObjectInnerVisual)
 xmap ah <Plug>(GitGutterTextObjectOuterVisual)
+
+" " ALE
+let g:ale_enabled = 0
+let g:ale_disable_lsp = 1
+let g:ale_set_quickfix = 0
+let g:ale_set_loclist = 0
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_filetype_changed = 1
+let g:ale_set_highlights = 1
+let g:ale_set_signs = 1
+let g:ale_completion_enabled = 0
+
+"" Use special space: ( ) U+2000 (EN QUAD)
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '●'
+let g:ale_sign_info = '●'
+let g:ale_sign_hint = '●'
+
+
+nmap [r <plug>(ale_previous_wrap)
+nmap ]r <plug>(ale_next_wrap)
+nnoremap <silent> <leader>a :<C-u>ALEToggle <Bar> echo g:ale_enabled ? 'ALE enabled' : 'ALE disabled' <CR>
 
 " }}}
 
