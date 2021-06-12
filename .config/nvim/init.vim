@@ -43,114 +43,6 @@ colorscheme gruvbox
 
 " }}}
 
-" Vim Settings {{{
-
-syntax on
-
-set number
-set hidden
-set cursorline
-set list
-set mouse=ar
-set laststatus=2
-set showtabline=2
-set tabpagemax=50
-set previewheight=5
-set noshowmode
-set incsearch
-set ignorecase
-set smartcase
-set autoread
-set nostartofline
-set noerrorbells
-
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set autoindent
-set smarttab
-set nowrap
-set scrolloff=3
-set sidescroll=1
-set sidescrolloff=0
-
-set foldmethod=marker
-
-" vim-gitgutter
-let g:gitgutter_sign_added = '┃'
-let g:gitgutter_sign_modified = '┃'
-let g:gitgutter_sign_removed = '◢'
-let g:gitgutter_sign_removed_first_line = '◥'
-let g:gitgutter_sign_modified_removed = '┻'
-let g:gitgutter_map_keys = 0
-nmap <leader>hp <Plug>(GitGutterPreviewHunk)
-nmap <leader>ha <Plug>(GitGutterStageHunk)
-nmap <leader>hu <Plug>(GitGutterUndoHunk)
-nmap ]c <Plug>(GitGutterNextHunk)
-nmap [c <Plug>(GitGutterPrevHunk)
-omap ih <Plug>(GitGutterTextObjectInnerPending)
-omap ah <Plug>(GitGutterTextObjectOuterPending)
-xmap ih <Plug>(GitGutterTextObjectInnerVisual)
-xmap ah <Plug>(GitGutterTextObjectOuterVisual)
-
-" " ALE
-let g:ale_enabled = 0
-let g:ale_disable_lsp = 1
-let g:ale_set_quickfix = 0
-let g:ale_set_loclist = 0
-let g:ale_lint_on_text_changed = 'normal'
-let g:ale_lint_on_insert_leave = 1
-let g:ale_lint_on_enter = 1
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_filetype_changed = 1
-let g:ale_set_highlights = 1
-let g:ale_set_signs = 1
-let g:ale_completion_enabled = 0
-
-"" Use special space: ( ) U+2000 (EN QUAD)
-let g:ale_sign_error = '●'
-let g:ale_sign_warning = '●'
-let g:ale_sign_info = '●'
-let g:ale_sign_hint = '●'
-
-
-nmap [r <plug>(ale_previous_wrap)
-nmap ]r <plug>(ale_next_wrap)
-nnoremap <silent> <leader>a :<C-u>ALEToggle <Bar> echo g:ale_enabled ? 'ALE enabled' : 'ALE disabled' <CR>
-
-" }}}
-
-" Backup / Swap / Undo {{{
-
-if !isdirectory($HOME . '/.config/nvim/.backup')
-    silent !mkdir -p ~/.config/nvim/.backup >/dev/null 2>&1
-endif
-set backupdir-=.
-set backupdir+=.
-set backupdir-=~/
-set backupdir^=~/.config/nvim/.backup/
-set backupdir^=./.config/nvim-backup/
-set backup
-
-if !isdirectory($HOME . '/.config/nvim/.swap')
-    silent !mkdir -p ~/.config/nvim/.swap >/dev/null 2>&1
-endif
-set directory=./.vim-swap//
-set directory+=~/.config/nvim/.swap//
-set directory+=~/.tmp//
-set directory+=.
-
-if exists('+undofile')
-    if !isdirectory($HOME . '/.config/nvim/.undo')
-        silent !mkdir -p ~/.config/nvim/.undo >/dev/null 2>&1
-    endif
-    set undodir=./.config/nvim-undo//
-    set undodir+=~/.config/nvim/.undo//
-    set undofile
-endif
-
-" }}}
-
 " Mappings {{{
 
 let mapleader = "\<Space>"
@@ -188,6 +80,117 @@ nnoremap <C-Q>     :q<cr>
 vnoremap <C-Q>     <esc>
 nnoremap <Leader>q :q<cr>
 nnoremap <Leader>Q :qa!<cr>
+
+" }}}
+
+" Vim Settings {{{
+
+syntax on
+
+set number
+set hidden
+set cursorline
+set list
+set mouse=ar
+set laststatus=2
+set showtabline=2
+set tabpagemax=50
+set previewheight=5
+set noshowmode
+set incsearch
+set ignorecase
+set smartcase
+set autoread
+set nostartofline
+set noerrorbells
+
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set smarttab
+set nowrap
+set scrolloff=3
+set sidescroll=1
+set sidescrolloff=0
+
+set foldmethod=marker
+
+" }}}
+
+" Plugin Settings {{{
+
+" vim-gitgutter
+let g:gitgutter_sign_added = '┃'
+let g:gitgutter_sign_modified = '┃'
+let g:gitgutter_sign_removed = '◢'
+let g:gitgutter_sign_removed_first_line = '◥'
+let g:gitgutter_sign_modified_removed = '┻'
+let g:gitgutter_map_keys = 0
+nmap <leader>hp <Plug>(GitGutterPreviewHunk)
+nmap <leader>ha <Plug>(GitGutterStageHunk)
+nmap <leader>hu <Plug>(GitGutterUndoHunk)
+nmap ]c <Plug>(GitGutterNextHunk)
+nmap [c <Plug>(GitGutterPrevHunk)
+omap ih <Plug>(GitGutterTextObjectInnerPending)
+omap ah <Plug>(GitGutterTextObjectOuterPending)
+xmap ih <Plug>(GitGutterTextObjectInnerVisual)
+xmap ah <Plug>(GitGutterTextObjectOuterVisual)
+
+" ALE
+let g:ale_enabled = 0
+let g:ale_disable_lsp = 1
+let g:ale_set_quickfix = 0
+let g:ale_set_loclist = 0
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_filetype_changed = 1
+let g:ale_set_highlights = 1
+let g:ale_set_signs = 1
+let g:ale_completion_enabled = 0
+
+"" Use special space: ( ) U+2000 (EN QUAD)
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '●'
+let g:ale_sign_info = '●'
+let g:ale_sign_hint = '●'
+
+nmap [r <plug>(ale_previous_wrap)
+nmap ]r <plug>(ale_next_wrap)
+nnoremap <silent> <leader>a :<C-u>ALEToggle <Bar> echo g:ale_enabled ? 'ALE enabled' : 'ALE disabled' <CR>
+
+" }}}
+
+" Backup / Swap / Undo {{{
+
+if !isdirectory($HOME . '/.config/nvim/.backup')
+    silent !mkdir -p ~/.config/nvim/.backup >/dev/null 2>&1
+endif
+set backupdir-=.
+set backupdir+=.
+set backupdir-=~/
+set backupdir^=~/.config/nvim/.backup/
+set backupdir^=./.config/nvim-backup/
+set backup
+
+if !isdirectory($HOME . '/.config/nvim/.swap')
+    silent !mkdir -p ~/.config/nvim/.swap >/dev/null 2>&1
+endif
+set directory=./.vim-swap//
+set directory+=~/.config/nvim/.swap//
+set directory+=~/.tmp//
+set directory+=.
+
+if exists('+undofile')
+    if !isdirectory($HOME . '/.config/nvim/.undo')
+        silent !mkdir -p ~/.config/nvim/.undo >/dev/null 2>&1
+    endif
+    set undodir=./.config/nvim-undo//
+    set undodir+=~/.config/nvim/.undo//
+    set undofile
+endif
 
 " }}}
 
