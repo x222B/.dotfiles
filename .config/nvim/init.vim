@@ -1,5 +1,5 @@
 
-" Setup directories and vim-plug: {{{
+" Bootstrap nvim and vim-plug: {{{
 
 if !filereadable($HOME . '/.config/nvim/autoload/plug.vim')
     silent !mkdir -p ~/.config/nvim/autoload >/dev/null 2>&1
@@ -40,11 +40,12 @@ colorscheme gruvbox
 
 " Vim Settings {{{
 
+syntax on
+
 set number
 set hidden
 set cursorline
 set list
-set nowrap
 set mouse=ar
 set laststatus=2
 set showtabline=2
@@ -57,37 +58,19 @@ set ignorecase
 set smartcase
 set autoread
 set nostartofline
+set noerrorbells
 
-set tabstop=4
+set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
 set smarttab
-set textwidth=80
+set nowrap
 set scrolloff=3
 set sidescroll=1
 set sidescrolloff=0
 
-set wildmode=longest:full,full
-set wildignorecase
-set wildignore+=.ignore,.gitignore
-set wildignore+=*/.git/,*/.hg/,*/.svn/
-set wildignore+=*/.ccls-cache/,*/.clangd/
-set wildignore+=*.o,*.so,*.class,*.exe,*.dll,*.com
-set wildignore+=.tmux,.nvimrc,.vimrc,.exrc
-set wildignore+=tags,.tags,*/.backup/,*/.vim-backup/,*/.swap/,*/.vim-swap/,*/.undo/,*/.vim-undo/,*/._pkg/
-set wildignore+=*.cache,*.log,*~,*#,*.bak,*.BAK,*.old,*.OLD,*.off,*.OFF,*.dist,*.DIST,*.orig,*.ORIG,*.rej,*.REJ,.DS_Store*
-set wildignore+=*.swp,*.swo,*.swn,*.swm,*.tmp
-set wildignore+=*.pid,*.state
-set wildignore+=*.dump,*.stackdump,*.zcompdump,*.zwc,*.pcap,*.cap,*.dmp
-set wildignore+=*.err,*.error,*.stderr
-set wildignore+=*history,*_history,*_hist
-set wildignore+=*_rsa,*_rsa.*,*_dsa,*_dsa.*,*_keys,*.pem,*.key,*.gpg
-
 set foldmethod=marker
-
-set guifont=monospace
-set guioptions-=mTrl
 
 " }}}
 
@@ -188,7 +171,6 @@ endfunction
 
 " }}}
 
-
 " autocmd {{{
 
 augroup AutoSaveGroup
@@ -201,6 +183,12 @@ augroup SaveTrimWhitespace
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
 augroup end
+
+augroup vimrc-incsearch-highlight
+    autocmd!
+    autocmd CmdlineEnter /,\? :set hlsearch
+    autocmd CmdlineLeave /,\? :set nohlsearch
+augroup END
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
