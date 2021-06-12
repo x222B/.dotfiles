@@ -87,5 +87,5 @@ if [[ $response =~ (y|yes|Y) ]]; then
     highlight "Copying Settings"
     cp ./zsh/*.zsh ~/.config/zsh
     highlight "Copying .zshrc"
-    cp ./.zshrc ~/.zshrc
+    mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
 fi
