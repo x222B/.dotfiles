@@ -1,4 +1,3 @@
-
 " Bootstrap nvim and vim-plug: {{{
 
 if !filereadable($HOME . '/.config/nvim/autoload/plug.vim')
@@ -21,6 +20,7 @@ let g:plug_url_format = 'https://github.com/%s.git'
 Plug 'x222b/gruvbox'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -52,7 +52,6 @@ set showtabline=2
 set tabpagemax=50
 set previewheight=5
 set noshowmode
-set hlsearch
 set incsearch
 set ignorecase
 set smartcase
@@ -71,6 +70,23 @@ set sidescroll=1
 set sidescrolloff=0
 
 set foldmethod=marker
+
+" vim-gitgutter
+let g:gitgutter_sign_added = '┃'
+let g:gitgutter_sign_modified = '┃'
+let g:gitgutter_sign_removed = '◢'
+let g:gitgutter_sign_removed_first_line = '◥'
+let g:gitgutter_sign_modified_removed = '┻'
+let g:gitgutter_map_keys = 0
+nmap <leader>hp <Plug>(GitGutterPreviewHunk)
+nmap <leader>ha <Plug>(GitGutterStageHunk)
+nmap <leader>hu <Plug>(GitGutterUndoHunk)
+nmap ]c <Plug>(GitGutterNextHunk)
+nmap [c <Plug>(GitGutterPrevHunk)
+omap ih <Plug>(GitGutterTextObjectInnerPending)
+omap ah <Plug>(GitGutterTextObjectOuterPending)
+xmap ih <Plug>(GitGutterTextObjectInnerVisual)
+xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 
 " }}}
 
@@ -153,7 +169,6 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 
-
 function! s:goyo_enter()
 	Limelight
 	let &l:statusline = '%M'
@@ -187,6 +202,12 @@ augroup END
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+augroup GitGutterUpdate
+    autocmd!
+    autocmd BufWritePost * GitGutter
+augroup END
+
 
 " }}}
 
