@@ -1,6 +1,13 @@
 #!/bin/bash
 
+if [[ -d ~/Pictures/wallpapers ]]; then
+    mv ~/.dotfiles/packages/pacman ~/.dotfiles/packages/pacman.backup
+fi
 pacman -Qqten > ~/.dotfiles/packages/pacman
 echo "Created a backup of packages in ~/.dotfiles/packages/pacman"
+
+if [[ -d ~/Pictures/wallpapers ]]; then
+    mv ~/.dotfiles/packages/aur ~/.dotfiles/packages/aur.backup
+fi
 pacman -Qqem > ~/.dotfiles/packages/aur
 echo "Created a backup of aur packages in ~/.dotfiles/packages/aur"
