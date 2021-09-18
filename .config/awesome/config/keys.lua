@@ -96,12 +96,12 @@ function config.init(context)
         -- awful.key({ modkey }, "v", function() awful.spawn("xsel -b | xsel") end),
 
         -- Prompt
-        awful.key({ modkey                    }, "r", function() awful.screen.focused()._promptbox:run() end,
+        awful.key({ modkey                    }, "-", function() awful.screen.focused()._promptbox:run() end,
                   {description = "run prompt", group = "launcher"}),
         awful.key({ modkey                    }, "p", function() menubar.show() end,
                   {description = "show the menubar", group = "launcher"}),
-        awful.key({ modkey                    }, "-", function()
-            context.util.easy_async_with_unfocus("rofi -show drun")
+        awful.key({ modkey                    }, "r", function()
+            context.util.easy_async_with_unfocus("rofi -show run")
             -- awful.spawn("dmenu_run")
             -- awful.spawn(string.format("dmenu_run -i -t -dim 0.5 -p 'Run: ' -h 21 -fn 'Meslo LG S for Powerline-10' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
             -- beautiful.tasklist_bg_normal, beautiful.fg_normal, beautiful.tasklist_bg_urgent, beautiful.tasklist_fg_urgent))
