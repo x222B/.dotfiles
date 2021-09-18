@@ -3,7 +3,7 @@
 if [[ -d ~/Pictures/wallpapers ]]; then
     mv ~/.dotfiles/packages/pacman ~/.dotfiles/packages/pacman.backup
 fi
-pacman -Qqten > ~/.dotfiles/packages/pacman
+pacman -Qeq > ~/.dotfiles/packages/pacman
 echo "Created a backup of packages in ~/.dotfiles/packages/pacman"
 
 if [[ -d ~/Pictures/wallpapers ]]; then
