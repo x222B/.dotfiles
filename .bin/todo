@@ -1,0 +1,18 @@
+#!/usr/bin/lua
+
+local todo = {}
+
+function add(param)
+    table.insert(todo,param)
+end
+
+function list()
+    for i,v in pairs(todo) do
+        print(i .. ' ' .. todo[i])
+    end
+end
+
+add('hello')
+add('world')
+
+list()
