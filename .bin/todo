@@ -1,4 +1,18 @@
 #!/usr/bin/lua
+
+function dump(o)
+   if type(o) == 'table' then
+      local s = '{ '
+      for k,v in pairs(o) do
+         if type(k) ~= 'number' then k = '"'..k..'"' end
+         s = s .. '['..k..'] = ' .. dump(v) .. ','
+      end
+      return s .. '} '
+   else
+      return tostring(o)
+   end
+end
+
 do
    -- declare local variables
    --// exportstring( string )
@@ -110,10 +124,9 @@ function Main()
 
     local home = os.getenv ( "HOME" )
 
-    todo = table.load( home .. "/.local/test_tbl.lua" )
-    if todo == nil then
-        todo = {}
-    end
+    local todo = table.load( home .. "/.local/test_tbl.lua" )
+
+    if todo == nil then todo = {} end
 
     function saveTable()
         assert( table.save( todo, home .. "/.local/test_tbl.lua" ) == nil )
@@ -129,7 +142,12 @@ function Main()
 
     function list()
         for i=1, #todo do
-            print(i .. ' ' .. todo[i].value)
+            if todo[i].done == 'true' then
+                local escapeString = string.char(27)..'[%dm'
+                print(i .. ' ' ..escapeString:format(0) .. escapeString:format(9) .. todo[i].value .. escapeString:format(9)..escapeString:format(0))
+            else
+                print(i .. ' ' .. todo[i].value)
+            end
         end
     end
 
@@ -140,12 +158,39 @@ function Main()
         saveTable()
     end
 
+    function done()
+        for i=2,#arg do
+            index = tonumber(arg[i])
+            todo[index].done = 'true'
+        end
+        saveTable()
+    end
+
+    function clean()
+        for i=#todo,1,-1 do
+                if todo[i].done == 'true' then
+                    table.remove(todo,i)
+                end
+        end
+        saveTable()
+    end
+
+    function reset()
+        os.remove(home .. "/.local/test_tbl.lua")
+    end
+
     if arg[1] == 'add' then
         add()
     elseif arg[1] == 'rm' then
         rm()
     elseif arg[1] == 'list' then
         list()
+    elseif arg[1] == 'done' then
+        done()
+    elseif arg[1] == 'clean' then
+        clean()
+    elseif arg[1] == 'reset' then
+        reset()
     end
 
 end
