@@ -31,6 +31,7 @@ libtool
 linux
 linux-firmware
 linux-headers
+lua
 m4
 maim
 make
