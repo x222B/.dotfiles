@@ -1,268 +1,246 @@
 #!/usr/bin/lua
---TODO: refactor everything
---TODO: gist lua ansi escape codes
 
-function dump(o)
-   if type(o) == 'table' then
-      local s = '{ '
-      for k,v in pairs(o) do
-         if type(k) ~= 'number' then k = '"'..k..'"' end
-         s = s .. '['..k..'] = ' .. dump(v) .. ','
-      end
-      return s .. '} '
-   else
-      return tostring(o)
-   end
+-- Simple (and inefficient) todo list implemented in lua.
+-- Inspired by https://github.com/sioodmy/todo
+
+-- SaveTableToFile for data persistence
+-- http://lua-users.org/wiki/SaveTableToFile
+
+local function exportstring( s )
+   return string.format("%q", s)
 end
 
+--// The Save Function
+function table.save(  tbl,filename )
+   local charS,charE = "   ","\n"
+   local file,err = io.open( filename, "wb" )
+   if err then return err end
 
-do
-   -- declare local variables
-   --// exportstring( string )
-   --// returns a "Lua" portable version of the string
-   local function exportstring( s )
-      return string.format("%q", s)
-   end
+   local tables,lookup = { tbl },{ [tbl] = 1 }
+   file:write( "return {"..charE )
 
-   --// The Save Function
-   function table.save(  tbl,filename )
-      local charS,charE = "   ","\n"
-      local file,err = io.open( filename, "wb" )
-      if err then return err end
+   for idx,t in ipairs( tables ) do
+      file:write( "-- Table: {"..idx.."}"..charE )
+      file:write( "{"..charE )
+      local thandled = {}
 
-      -- initiate variables for save procedure
-      local tables,lookup = { tbl },{ [tbl] = 1 }
-      file:write( "return {"..charE )
+      for i,v in ipairs( t ) do
+         thandled[i] = true
+         local stype = type( v )
+         if stype == "table" then
+            if not lookup[v] then
+               table.insert( tables, v )
+               lookup[v] = #tables
+            end
+            file:write( charS.."{"..lookup[v].."},"..charE )
+         elseif stype == "string" then
+            file:write(  charS..exportstring( v )..","..charE )
+         elseif stype == "number" then
+            file:write(  charS..tostring( v )..","..charE )
+         end
+      end
 
-      for idx,t in ipairs( tables ) do
-         file:write( "-- Table: {"..idx.."}"..charE )
-         file:write( "{"..charE )
-         local thandled = {}
+      for i,v in pairs( t ) do
+         if (not thandled[i]) then
 
-         for i,v in ipairs( t ) do
-            thandled[i] = true
-            local stype = type( v )
-            -- only handle value
+            local str = ""
+            local stype = type( i )
             if stype == "table" then
-               if not lookup[v] then
-                  table.insert( tables, v )
-                  lookup[v] = #tables
+               if not lookup[i] then
+                  table.insert( tables,i )
+                  lookup[i] = #tables
                end
-               file:write( charS.."{"..lookup[v].."},"..charE )
+               str = charS.."[{"..lookup[i].."}]="
             elseif stype == "string" then
-               file:write(  charS..exportstring( v )..","..charE )
+               str = charS.."["..exportstring( i ).."]="
             elseif stype == "number" then
-               file:write(  charS..tostring( v )..","..charE )
+               str = charS.."["..tostring( i ).."]="
             end
-         end
 
-         for i,v in pairs( t ) do
-            -- escape handled values
-            if (not thandled[i]) then
-
-               local str = ""
-               local stype = type( i )
-               -- handle index
+            if str ~= "" then
+               stype = type( v )
                if stype == "table" then
-                  if not lookup[i] then
-                     table.insert( tables,i )
-                     lookup[i] = #tables
+                  if not lookup[v] then
+                     table.insert( tables,v )
+                     lookup[v] = #tables
                   end
-                  str = charS.."[{"..lookup[i].."}]="
+                  file:write( str.."{"..lookup[v].."},"..charE )
                elseif stype == "string" then
-                  str = charS.."["..exportstring( i ).."]="
+                  file:write( str..exportstring( v )..","..charE )
                elseif stype == "number" then
-                  str = charS.."["..tostring( i ).."]="
-               end
-
-               if str ~= "" then
-                  stype = type( v )
-                  -- handle value
-                  if stype == "table" then
-                     if not lookup[v] then
-                        table.insert( tables,v )
-                        lookup[v] = #tables
-                     end
-                     file:write( str.."{"..lookup[v].."},"..charE )
-                  elseif stype == "string" then
-                     file:write( str..exportstring( v )..","..charE )
-                  elseif stype == "number" then
-                     file:write( str..tostring( v )..","..charE )
-                  end
+                  file:write( str..tostring( v )..","..charE )
                end
             end
          end
-         file:write( "},"..charE )
       end
-      file:write( "}" )
-      file:close()
+      file:write( "},"..charE )
    end
-
-   --// The Load Function
-   function table.load( sfile )
-      local ftables,err = loadfile( sfile )
-      if err then return _,err end
-      local tables = ftables()
-      for idx = 1,#tables do
-         local tolinki = {}
-         for i,v in pairs( tables[idx] ) do
-            if type( v ) == "table" then
-               tables[idx][i] = tables[v[1]]
-            end
-            if type( i ) == "table" and tables[i[1]] then
-               table.insert( tolinki,{ i,tables[i[1]] } )
-            end
-         end
-         -- link indices
-         for _,v in ipairs( tolinki ) do
-            tables[idx][v[2]],tables[idx][v[1]] =  tables[idx][v[1]],nil
-         end
-      end
-      return tables[1]
-   end
--- close do
+   file:write( "}" )
+   file:close()
 end
 
-function Main()
+--// The Load Function
+function table.load( sfile )
+   local ftables,err = loadfile( sfile )
+   if err then return _,err end
+   local tables = ftables()
+   for idx = 1,#tables do
+      local tolinki = {}
+      for i,v in pairs( tables[idx] ) do
+         if type( v ) == "table" then
+            tables[idx][i] = tables[v[1]]
+         end
+         if type( i ) == "table" and tables[i[1]] then
+            table.insert( tolinki,{ i,tables[i[1]] } )
+         end
+      end
+      for _,v in ipairs( tolinki ) do
+         tables[idx][v[2]],tables[idx][v[1]] =  tables[idx][v[1]],nil
+      end
+   end
+   return tables[1]
+end
 
-    local home = os.getenv ( "HOME" )
-    local todo = table.load( home .. "/.local/todo_tbl.lua" )
-    if todo == nil then todo = {} end
+local home = os.getenv ( "HOME" )
+local dir = home .. "/.local/todo_tbl.lua"
 
-    function saveTable()
-        assert( table.save( todo, home .. "/.local/todo_tbl.lua" ) == nil )
+local todo = table.load( dir )
+if todo == nil then todo = {} end
+
+local function saveTable()
+    assert( table.save( todo, dir ) == nil )
+end
+
+local function add(param)
+    for i=2,#arg do
+        local newItem = { value = arg[i] }
+        table.insert(todo,newItem)
     end
+    saveTable()
+end
 
-    function add(param)
-        for i=2,#arg do
-            local newItem = { value = arg[i] }
-            table.insert(todo,newItem)
+local function list()
+
+    local ansiReset = string.char(27) .. '[0m'
+    local ansiStrike = string.char(27) .. '[9m'
+    local ansiRed = string.char(27) .. '[31m'
+
+    for i=1, #todo do
+        if todo[i].state == 'done' then
+            print( i .. ' ' .. ansiStrike .. todo[i].value .. ansiReset )
+        elseif todo[i].state == 'urgent' then
+            print( i .. ' ' .. ansiRed .. todo[i].value .. ansiReset )
+        else
+            print( i .. ' ' .. todo[i].value )
         end
-        saveTable()
     end
+end
 
-    function list()
-        local ansiReset = string.char(27) .. '[0m'
-        local ansiStrike = string.char(27) .. '[9m'
-        local ansiRed = string.char(27) .. '[31m'
+local function rm()
+    local arr = {}
+    for i=2,#arg do
+        local index = tonumber(arg[i])
+        table.insert(arr,index)
+    end
+    table.sort(arr)
+    for i=#arr,1,-1 do
+        table.remove(todo,arr[i])
+    end
+    saveTable()
+end
 
-        for i=1, #todo do
+local function done()
+    for i=2,#arg do
+        local index = tonumber(arg[i])
+        if todo[index].state == 'done' then
+            todo[index].state = nil
+        else
+            todo[index].state = 'done'
+        end
+    end
+    saveTable()
+end
+
+local function urgent()
+    for i=2,#arg do
+        local index = tonumber(arg[i])
+        if todo[index].state == 'urgent' then
+            todo[index].state = nil
+        else
+            todo[index].state = 'urgent'
+        end
+    end
+    saveTable()
+end
+
+local function clean()
+    for i=#todo,1,-1 do
             if todo[i].state == 'done' then
-                print(i .. ' ' .. ansiStrike .. todo[i].value .. ansiReset)
-            elseif todo[i].state == 'urgent' then
-                print(i .. ' ' .. ansiRed .. todo[i].value .. ansiReset)
-            else
-                print(i .. ' ' .. todo[i].value)
+                table.remove(todo,i)
             end
+    end
+    saveTable()
+end
+
+local function sort()
+    local sorted ={}
+    for i=1,#todo do
+        if todo[i].state == 'urgent' then
+            table.insert(sorted,todo[i])
         end
     end
-
-    function rm()
-        local arr = {}
-        for i=2,#arg do
-            print('adding arg '..i..' '..arg[i])
-            table.insert(arr,tonumber(arg[i]))
+    for i=1,#todo do
+        if todo[i].state == nil then
+            table.insert(sorted,todo[i])
         end
-        table.sort(arr)
-        for i=#arr,1,-1 do
-            print('removing item: '.. arr[i])
-            table.remove(todo,arr[i])
-        end
-        saveTable()
     end
-
-    function done()
-        for i=2,#arg do
-            index = tonumber(arg[i])
-            if todo[index].state == 'done' then
-                todo[index].state = nil
-            else
-                todo[index].state = 'done'
-            end
+    for i=1,#todo do
+        if todo[i].state == 'done' then
+            table.insert(sorted,todo[i])
         end
-        saveTable()
     end
+    todo = sorted
+    saveTable()
+end
 
-    function urgent()
-        for i=2,#arg do
-            index = tonumber(arg[i])
-            if todo[index].state == 'urgent' then
-                todo[index].state = nil
-            else
-                todo[index].state = 'urgent'
-            end
-        end
-        saveTable()
-    end
+local function reset()
+    os.remove(dir)
+end
 
-    function clean()
-        for i=#todo,1,-1 do
-                if todo[i].state == 'done' then
-                    table.remove(todo,i)
-                end
-        end
-        saveTable()
-    end
-
-    function sort()
-        local sorted ={}
-        for i=1,#todo do
-            if todo[i].state == 'urgent' then
-                table.insert(sorted,todo[i])
-            end
-        end
-        for i=1,#todo do
-            if todo[i].state == nil then
-                table.insert(sorted,todo[i])
-            end
-        end
-        for i=1,#todo do
-            if todo[i].state == 'done' then
-                table.insert(sorted,todo[i])
-            end
-        end
-        todo = sorted
-        saveTable()
-    end
-
-    function help()
-        print([[
+local function help()
+    print([[
 Commands:
-    add: adds new items delimted by space (eg. todo add study 'wash dishes' shower)
-    rm: removes items by index (eg. todo rm 3 7 4)
-    done: marks item as 'done' (eg. todo done 4 2 1)
+    list:   lists current list (list saved in ]]..dir..[[)
+    add:    adds new items delimted by space (eg. todo add study 'wash dishes' shower)
+    rm:     removes items by index (eg. todo rm 3 7 4)
+    done:   marks item as 'done' (eg. todo done 4 2 1)
     urgent: marks item as 'urgent' (eg. todo urgent 4 2 1)
-    clean: removes items that are marked 'done'
-    reset: removes saved list
-    sort: sorts the list ( urgent > incomplete > done )]])
-    end
-
-    function reset()
-        os.remove(home .. "/.local/todo_tbl.lua")
-    end
-
-    if arg[1] == 'add' then
-        add()
-    elseif arg[1] == 'rm' then
-        rm()
-    elseif arg[1] == 'done' then
-        done()
-    elseif arg[1] == 'clean' then
-        clean()
-    elseif arg[1] == 'reset' then
-        reset()
-    elseif arg[1] == 'urgent' then
-        urgent()
-    elseif arg[1] == 'sort' then
-        sort()
-    elseif arg[1] == 'help' then
-        help()
-    elseif arg[1] == nil then
-        list()
-    else
-        print('Unknown command \''..arg[1]..'\'. See \'todo help\' for available commands.')
-    end
-
+    clean:  removes items that are marked 'done'
+    reset:  removes saved list
+    sort:   sorts the list ( urgent > incomplete > done )]])
 end
 
-Main()
+if arg[1] == 'add' then
+    add()
+elseif arg[1] == 'rm' then
+    rm()
+elseif arg[1] == 'done' then
+    done()
+elseif arg[1] == 'clean' then
+    clean()
+elseif arg[1] == 'reset' then
+    reset()
+elseif arg[1] == 'urgent' then
+    urgent()
+elseif arg[1] == 'sort' then
+    sort()
+elseif arg[1] == 'help' then
+    help()
+elseif arg[1] == 'list' then
+    list()
+elseif arg[1] == nil then
+    list()
+else
+    print('Unknown command \''..arg[1]..'\'.')
+    print('See \'todo help\' for available commands.')
+end
