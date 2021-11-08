@@ -1,9 +1,6 @@
 #!/usr/bin/lua
 --TODO: refactor everything
---TODO: default to list()
---TODO: 'unknown command'
 --TODO: gist lua ansi escape codes
---TODO: sort()
 
 function dump(o)
    if type(o) == 'table' then
@@ -228,6 +225,18 @@ function Main()
         saveTable()
     end
 
+    function help()
+        print([[
+Commands:
+    add: adds new items delimted by space (eg. todo add study 'wash dishes' shower)
+    rm: removes items by index (eg. todo rm 3 7 4)
+    done: marks item as 'done' (eg. todo done 4 2 1)
+    urgent: marks item as 'urgent' (eg. todo urgent 4 2 1)
+    clean: removes items that are marked 'done'
+    reset: removes saved list
+    sort: sorts the list ( urgent > incomplete > done )]])
+    end
+
     function reset()
         os.remove(home .. "/.local/todo_tbl.lua")
     end
@@ -236,8 +245,6 @@ function Main()
         add()
     elseif arg[1] == 'rm' then
         rm()
-    elseif arg[1] == 'list' then
-        list()
     elseif arg[1] == 'done' then
         done()
     elseif arg[1] == 'clean' then
@@ -248,6 +255,12 @@ function Main()
         urgent()
     elseif arg[1] == 'sort' then
         sort()
+    elseif arg[1] == 'help' then
+        help()
+    elseif arg[1] == nil then
+        list()
+    else
+        print('Unknown command \''..arg[1]..'\'. See \'todo help\' for available commands.')
     end
 
 end
