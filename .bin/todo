@@ -6,6 +6,20 @@
 --TODO: gist lua ansi escape codes
 --TODO: if already done, reset
 --TODO: sort()
+--
+function dump(o)
+   if type(o) == 'table' then
+      local s = '{ '
+      for k,v in pairs(o) do
+         if type(k) ~= 'number' then k = '"'..k..'"' end
+         s = s .. '['..k..'] = ' .. dump(v) .. ','
+      end
+      return s .. '} '
+   else
+      return tostring(o)
+   end
+end
+
 
 do
    -- declare local variables
@@ -148,10 +162,16 @@ function Main()
         end
     end
 
-    --TODO: todo rm 3 2 / maybe reverse for?
     function rm()
+        local arr = {}
         for i=2,#arg do
-            table.remove(todo,arg[i]-(i-2))
+            print('adding arg '..i..' '..arg[i])
+            table.insert(arr,tonumber(arg[i]))
+        end
+        table.sort(arr)
+        for i=#arr,1,-1 do
+            print('removing item: '.. arr[i])
+            table.remove(todo,arr[i])
         end
         saveTable()
     end
