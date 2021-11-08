@@ -52,11 +52,13 @@ sed
 sudo
 texinfo
 unrar
+vdpauinfo
 which
 xorg-server
 xorg-xinit
 xorg-xset
 xterm
+youtube-dl
 zathura
 zathura-pdf-mupdf
 zsh
