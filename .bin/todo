@@ -1,17 +1,11 @@
 #!/usr/bin/lua
-
-function dump(o)
-   if type(o) == 'table' then
-      local s = '{ '
-      for k,v in pairs(o) do
-         if type(k) ~= 'number' then k = '"'..k..'"' end
-         s = s .. '['..k..'] = ' .. dump(v) .. ','
-      end
-      return s .. '} '
-   else
-      return tostring(o)
-   end
-end
+--TODO: refactor everything
+--TODO: ansi colors, urgent!
+--TODO: default to list()
+--TODO: 'unknown command'
+--TODO: gist lua ansi escape codes
+--TODO: if already done, reset
+--TODO: sort()
 
 do
    -- declare local variables
@@ -123,34 +117,38 @@ end
 function Main()
 
     local home = os.getenv ( "HOME" )
-
-    local todo = table.load( home .. "/.local/test_tbl.lua" )
-
+    local todo = table.load( home .. "/.local/todo_tbl.lua" )
     if todo == nil then todo = {} end
 
     function saveTable()
-        assert( table.save( todo, home .. "/.local/test_tbl.lua" ) == nil )
+        assert( table.save( todo, home .. "/.local/todo_tbl.lua" ) == nil )
     end
 
     function add(param)
         for i=2,#arg do
-            local newItem = {value = arg[i]}
+            local newItem = { value = arg[i] }
             table.insert(todo,newItem)
         end
         saveTable()
     end
 
     function list()
+        local ansiReset = string.char(27) .. '[0m'
+        local ansiStrike = string.char(27) .. '[9m'
+        local ansiRed = string.char(27) .. '[31m'
+
         for i=1, #todo do
-            if todo[i].done == 'true' then
-                local escapeString = string.char(27)..'[%dm'
-                print(i .. ' ' ..escapeString:format(0) .. escapeString:format(9) .. todo[i].value .. escapeString:format(9)..escapeString:format(0))
+            if todo[i].state == 'done' then
+                print(i .. ' ' .. ansiStrike .. todo[i].value .. ansiReset)
+            elseif todo[i].state == 'urgent' then
+                print(i .. ' ' .. ansiRed .. todo[i].value .. ansiReset)
             else
                 print(i .. ' ' .. todo[i].value)
             end
         end
     end
 
+    --TODO: todo rm 3 2 / maybe reverse for?
     function rm()
         for i=2,#arg do
             table.remove(todo,arg[i]-(i-2))
@@ -161,14 +159,30 @@ function Main()
     function done()
         for i=2,#arg do
             index = tonumber(arg[i])
-            todo[index].done = 'true'
+            if todo[index].state == 'done' then
+                todo[index].state = nil
+            else
+                todo[index].state = 'done'
+            end
+        end
+        saveTable()
+    end
+
+    function urgent()
+        for i=2,#arg do
+            index = tonumber(arg[i])
+            if todo[index].state == 'urgent' then
+                todo[index].state = nil
+            else
+                todo[index].state = 'urgent'
+            end
         end
         saveTable()
     end
 
     function clean()
         for i=#todo,1,-1 do
-                if todo[i].done == 'true' then
+                if todo[i].state == 'done' then
                     table.remove(todo,i)
                 end
         end
@@ -176,7 +190,7 @@ function Main()
     end
 
     function reset()
-        os.remove(home .. "/.local/test_tbl.lua")
+        os.remove(home .. "/.local/todo_tbl.lua")
     end
 
     if arg[1] == 'add' then
@@ -191,6 +205,8 @@ function Main()
         clean()
     elseif arg[1] == 'reset' then
         reset()
+    elseif arg[1] == 'urgent' then
+        urgent()
     end
 
 end
