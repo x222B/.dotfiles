@@ -211,7 +211,7 @@ local function help()
     print([[
 Commands:
     list:   lists current list (list saved in ]]..dir..[[)
-    add:    adds new items delimted by space (eg. todo add study 'wash dishes' shower)
+    add:    adds new items delimted by space (eg. todo add task_one 'task two' task_three)
     rm:     removes items by index (eg. todo rm 3 7 4)
     done:   marks item as 'done' (eg. todo done 4 2 1)
     urgent: marks item as 'urgent' (eg. todo urgent 4 2 1)
