@@ -1,12 +1,10 @@
 #!/usr/bin/lua
 --TODO: refactor everything
---TODO: ansi colors, urgent!
 --TODO: default to list()
 --TODO: 'unknown command'
 --TODO: gist lua ansi escape codes
---TODO: if already done, reset
 --TODO: sort()
---
+
 function dump(o)
    if type(o) == 'table' then
       local s = '{ '
@@ -209,6 +207,27 @@ function Main()
         saveTable()
     end
 
+    function sort()
+        local sorted ={}
+        for i=1,#todo do
+            if todo[i].state == 'urgent' then
+                table.insert(sorted,todo[i])
+            end
+        end
+        for i=1,#todo do
+            if todo[i].state == nil then
+                table.insert(sorted,todo[i])
+            end
+        end
+        for i=1,#todo do
+            if todo[i].state == 'done' then
+                table.insert(sorted,todo[i])
+            end
+        end
+        todo = sorted
+        saveTable()
+    end
+
     function reset()
         os.remove(home .. "/.local/todo_tbl.lua")
     end
@@ -227,6 +246,8 @@ function Main()
         reset()
     elseif arg[1] == 'urgent' then
         urgent()
+    elseif arg[1] == 'sort' then
+        sort()
     end
 
 end
