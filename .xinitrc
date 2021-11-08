@@ -35,4 +35,5 @@ fi
 
 xset r rate 300 50 &
 picom --config .config/picom/picom.conf &
+sh ~/.bin/start_walls &
 exec awesome
