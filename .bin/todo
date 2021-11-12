@@ -111,7 +111,7 @@ local function saveTable()
     assert( table.save( todo, dir ) == nil )
 end
 
-local function add(param)
+local function add()
     for i=2,#arg do
         local newItem = { value = arg[i] }
         table.insert(todo,newItem)
