@@ -12,6 +12,7 @@ clang
 dhcpcd
 dosfstools
 efibootmgr
+exa
 fakeroot
 feh
 file
@@ -28,6 +29,7 @@ groff
 grub
 gzip
 htop
+kitty
 lib32-libva-mesa-driver
 lib32-mesa
 libnotify
@@ -48,6 +50,7 @@ nano
 neovim
 networkmanager
 nodejs
+noto-fonts-cjk
 npm
 p7zip
 pacman
@@ -64,10 +67,12 @@ sudo
 texinfo
 unrar
 which
+xautolock
 xf86-video-amdgpu
 xorg-server
 xorg-xinit
 xorg-xset
+xsecurelock
 xterm
 youtube-dl
 zsh

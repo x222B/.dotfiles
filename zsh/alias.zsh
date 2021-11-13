@@ -60,6 +60,17 @@ alias gdb='gdb -q'
 alias rust-gdb='rust-gdb -q'
 alias vimdiff='nvim -d'
 
+# git aliases
+alias g='git'
+
+alias ga='git add'
+alias gaa='git add --all'
+
+alias gc='git commit -v'
+alias gs='git status'
+alias gp='git push'
+alias gcl='git clone --recurse-submodules'
+
 # tty aliases
 if [[ "$TERM" == 'linux' ]]; then
     alias tmux='/usr/bin/tmux -L linux'
