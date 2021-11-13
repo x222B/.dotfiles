@@ -14,17 +14,22 @@ alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
 alias ........='cd ../../../../../../..'
 
-# ls variants
-alias l='ls -FAh'
-alias la='ls -lAFh'
-alias lt='ls -lFAht'
-alias lr='ls -RFAh'
+# # exa
+alias l='exa -l --no-time --no-user --no-permissions --no-filesize --group-directories-first'
+alias ll='exa -l --sort=Name --no-time --git --group-directories-first'
+alias la='exa -la --sort=Name --no-time --git --group-directories-first'
+alias lt="exa -T --level=2"
+alias ldot='exa -ld .* --no-time'
 
-# more ls variants
-alias ldot='ls -ld .*'
-alias lS='ls -1FASsh'
-alias lart='ls -1Fcart'
-alias lrt='ls -1Fcrt'
+# # ls variants
+# alias l='ls -FAh'
+# alias la='ls -lAFhv --group-directories-first'
+# alias lt='ls -lFAht'
+# alias lr='ls -RFAh'
+# alias ldot='ls -ld .*'
+# alias lS='ls -1FASsh'
+# alias lart='ls -1Fcart'
+# alias lrt='ls -1Fcrt'
 
 
 # suffix aliases
