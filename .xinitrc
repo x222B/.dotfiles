@@ -35,4 +35,5 @@ fi
 
 xset r rate 300 50 &
 picom --config .config/picom/picom.conf &
+xautolock -locker xsecurelock -time 10 -corners '0-0+' -cornerredelay 3600 -cornerdelay 1 &
 exec awesome
