@@ -34,6 +34,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 xset r rate 300 50 &
+xset s 300 5 &
 picom --config .config/picom/picom.conf &
-xautolock -locker xsecurelock -time 10 -corners '0-0+' -cornerredelay 3600 -cornerdelay 1 &
+xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 exec awesome
