@@ -36,5 +36,5 @@ fi
 xset r rate 300 50 &
 xset s 300 5 &
 picom --config .config/picom/picom.conf &
-xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
+xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
 exec awesome
