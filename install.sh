@@ -85,7 +85,7 @@ if [[ $response =~ (y|yes|Y) ]]; then
     highlight "Copying theme"
     cp ./zsh/themes/lambda.zsh-theme ~/.config/zsh/custom/themes/
     highlight "Copying Settings"
-    cp ./zsh/*.zsh ~/.config/zsh
+    cp ./zsh/*.zsh ~/.config/zsh/
     highlight "Copying .zshrc"
     mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
 fi
