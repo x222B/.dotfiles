@@ -54,4 +54,5 @@ autom4te\.cache
 README.*
 COPYING
 packages
+\.win
 
